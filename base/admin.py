@@ -3,6 +3,7 @@ from .models import Cocktail, Remark
 from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 
+
 @admin.register(Cocktail)
 class CocktailAdmin(SummernoteModelAdmin):
 
