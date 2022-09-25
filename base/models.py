@@ -14,7 +14,7 @@ class Cocktail(models.Model):
     slug = models.SlugField(max_length=50, unique=True)
     image = CloudinaryField('image', default='placeholder')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='remarks', null=False, blank=False,)
-    likes = models.ManyToManyField(User, related_name='cocktail_hearts', blank=False)
+    likes = models.ManyToManyField(User, related_name='cocktail_hearts', blank=True)
     ingredients = models.TextField(null=False, blank=False)
     steps = models.TextField(null=False, blank=False)
     mixing_time = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(60)])
@@ -23,7 +23,7 @@ class Cocktail(models.Model):
     last_update = models.DateTimeField(auto_now=True)
 
     SWEET = 'sweet'
-    BITTER = 'bitter' 
+    BITTER = 'bitter'
     SOUR = 'sour'
     SALTY = 'salty'
     UMAMI = 'umami'
