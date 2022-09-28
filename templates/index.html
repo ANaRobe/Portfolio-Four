@@ -1,0 +1,8 @@
+<h1> Cocktail</h1>
+
+
+<ul>
+{% for cocktail in cocktails %}
+    <li><img src=" {{ cocktail.image.url }}"><br>{{ cocktail.title }} | {{ cocktail.number_of_likes }}</li>
+{% endfor %}
+</ul>
