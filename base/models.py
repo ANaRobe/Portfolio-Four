@@ -56,7 +56,7 @@ class Cocktail(models.Model):
 
 class Remark(models.Model):
     """Layout for comments"""
-    cocktail = models.ForeignKey(Cocktail, on_delete=models.CASCADE, related_name='cocktails', null=False)
+    cocktail = models.ForeignKey(Cocktail, on_delete=models.CASCADE, related_name='remarks', null=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='remarks_user')
     text = models.TextField(null=False, blank=False)
     publish_date = models.DateTimeField(auto_now_add=True)
