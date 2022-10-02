@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic.list import ListView
+from django.views.generic import ListView, CreateView
 from django.views import View
-from .models import Cocktail, Remark
+from .models import Cocktail
+from .forms import CocktailForm
 
 
 
@@ -28,6 +29,12 @@ class CocktailDetail(View):
             {
                 "cocktail": cocktail,
                 "remarks": remarks,
-                "liked": liked
+                "liked": liked,
             },
         )
+
+
+class CocktailCreate(CreateView):
+    model = Cocktail
+    template_name = 'edit.html'
+    form_class = CocktailForm

@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.urls import reverse
+from django.utils.text import slugify
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
@@ -18,7 +20,7 @@ class Cocktail(models.Model):
     ingredients = models.TextField(null=False, blank=False)
     steps = models.TextField(null=False, blank=False)
     mixing_time = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(60)])
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     publish_date = models.DateTimeField(auto_now=True)
     last_update = models.DateTimeField(auto_now=True)
 
@@ -52,6 +54,14 @@ class Cocktail(models.Model):
     def number_of_likes(self):
         """Returns the total number of likes for each published cocktail"""
         return self.likes.count()
+
+    def get_absolute_url(self):
+        return reverse('cocktail', args=[self.slug])
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 
 class Remark(models.Model):

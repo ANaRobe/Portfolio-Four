@@ -1,24 +1,31 @@
-{% if user.is_authenticated %}
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-</li>
-{% else %}
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-</li>
+{% extends 'base.html' %}
 
-{% endif %}
+<!-- Wrap ALL content in a "content block" it will be inserted into the base.html  -->
+
+{% block content %}
+    {% if user.is_authenticated %}
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+    </li>
+    {% else %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+    </li>
+
+    {% endif %}
 
 
-<h1> Cocktails</h1>
-<ul>
-{% for cocktail in cocktails %}
 
-<a href="{% url 'cocktail' cocktail.slug %}">COCKTAIL</a>
-    <li><img src=" {{ cocktail.image.url }}"><br>{{ cocktail.title }} | {{ cocktail.number_of_likes }}</li>
-{% endfor %}
-</ul>
+    <h1>Cocktails</h1>
+    <ul>
+    {% for cocktail in cocktails %}
 
+    <a href="{% url 'cocktail' cocktail.slug %}">COCKTAIL</a>
+        <li><img src=" {{ cocktail.image.url }}"><br>{{ cocktail.title }} | {{ cocktail.number_of_likes }}</li>
+    {% endfor %}
+    </ul>
+{% endblock  %}
