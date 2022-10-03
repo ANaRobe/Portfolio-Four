@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from django.views import View
 from .models import Cocktail
 from .forms import CocktailForm
-
 
 
 class CocktailsList(ListView):
@@ -35,6 +34,11 @@ class CocktailDetail(View):
 
 
 class CocktailCreate(CreateView):
-    model = Cocktail
     template_name = 'edit.html'
     form_class = CocktailForm
+
+
+class CocktailEdit(UpdateView):
+    template_name = 'edit.html'
+    form_class = CocktailForm
+    queryset = Cocktail.objects.filter(status=1)

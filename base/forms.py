@@ -23,4 +23,3 @@ class CocktailForm(ModelForm):
         helper.field_class = 'col-9'
         helper.label_class = 'col-3'
         return helper
-

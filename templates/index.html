@@ -24,8 +24,9 @@
     <ul>
     {% for cocktail in cocktails %}
 
-    <a href="{% url 'cocktail' cocktail.slug %}">COCKTAIL</a>
-        <li><img src=" {{ cocktail.image.url }}"><br>{{ cocktail.title }} | {{ cocktail.number_of_likes }}</li>
+    <a href="{% url 'cocktail' cocktail.slug %}">{{ cocktail.title }}</a>
+        <li><img src=" {{ cocktail.image.url }}"><br>{{ cocktail.number_of_likes }}</li>
+        <a href="{% url 'edit' cocktail.slug %}">{{ cocktail.title }}</a>  
     {% endfor %}
     </ul>
 {% endblock  %}
