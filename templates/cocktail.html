@@ -12,4 +12,17 @@
     <li>{{remark.text}}</li>
 </ul>
 
+<div >
+    <p >Likes: {{ cocktail.number_of_likes }} </p>
+    {% if user.is_authenticated %}
+    <form  action="{% url 'cocktail_like' cocktail.slug %}" method="POST">
+        {% csrf_token %}
+        {% if liked %}
+        <button type="submit" name="cocktail_id" value="{{cocktail.slug}}">NoLike</i></button>
+        {% else %}
+        <button type="submit" name="cocktail_id" value="{{cocktail.slug}}">Like</i></button>
+        {% endif %}
+    </form>
+    {% endif %}
+</div>
 {% endblock %}

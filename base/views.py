@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.views import View
 from django.urls import reverse_lazy
 from .models import Cocktail
 from .forms import CocktailForm
+from django.http import HttpResponseRedirect
 
 
 class CocktailsList(ListView):
@@ -50,3 +51,17 @@ class CocktailDelete(DeleteView):
     template_name = 'cocktail_confirm_delete.html'
     queryset = Cocktail.objects.filter(status=1)
     success_url = reverse_lazy('home')
+
+
+class CocktailLike(View):
+
+    def post(self, request, slug):
+        cocktail = get_object_or_404(Cocktail, slug=slug)
+
+        if cocktail.likes.filter(id=request.user.id).exists():
+            cocktail.likes.remove(request.user)
+        else:
+            cocktail.likes.add(request.user)
+        
+        return HttpResponseRedirect(reverse('cocktail', args=[slug]))
+
