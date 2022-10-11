@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+{% if user.is_authenticated %}
+<div class="row">
+    <div class="col-8 offset-2">
+        <h1 class="h1 display-2 text-center">Favourite Recipes</h1>
+        <hr>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for cocktail in page_obj %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <a href="{% url 'cocktail' cocktail.slug %}" class="no-deco text-black">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if "placeholder" not in cocktail.image.url %}
+                                    <img class="card-img-top img-fit" src=" {{ cocktail.image.url }}" height="300" alt="{{ cocktail.title }}">
+                                    {% elif recipe.image_url %}
+                                    <img class="card-img-top img-fit" src="{{ cocktail.image_url}}" height="300" alt="{{ cocktail.title }}">
+                                    {% else %}
+                                    <img class="card-img-top img-fit" src="{% static 'images/cocktails.jpg' %}" height="300" alt="Cocktails">
+                                    {% endif %}
+                                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% empty %}
+                <div class="container log-box">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-12 mt-4">
+                            <p class="lead text-center">It looks like you haven't liked any cocktails yet!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "pagination.html" %}
+
+{% else %}
+
+{% include "account/login.html" %}
+
+{% endif %}
+
+{% endblock %}

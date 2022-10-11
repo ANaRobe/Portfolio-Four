@@ -6,6 +6,7 @@ from .models import Cocktail
 from .forms import CocktailForm
 from django.http import HttpResponseRedirect
 from django.contrib.postgres.search import SearchVector
+from django.core.paginator import Paginator
 
 
 def search_cocktails(request):
@@ -74,3 +75,19 @@ class CocktailLike(View):
         else:
             cocktail.likes.add(request.user)
         return HttpResponseRedirect(reverse('cocktail', args=[slug]))
+
+
+class UsersFavCocktails(View):
+
+    def get(self, request):
+
+        if request.user.is_authenticated:
+            cocktails = Cocktail.objects.filter(likes=request.user.id)
+            paginator = Paginator(cocktails, 6)  # Show 6 Recipes per page.
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            return render(request, 'favourites.html', {
+                'page_obj': page_obj
+                })
+        else:
+            return render(request, 'favourites.html')
