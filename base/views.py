@@ -7,6 +7,16 @@ from .forms import CocktailForm
 from django.http import HttpResponseRedirect
 
 
+def search_cocktails(request):
+    if request.method == 'POST':
+        searched = request.POST.get('searched')
+        cocktails = Cocktail.objects.filter(title__icontains=searched)
+        return render(request, 'search_cocktails.html', {'searched':searched, 'cocktails':cocktails})
+    
+    else:
+        return render(request, 'search_cocktails.html', {'searched':searched, 'cocktails':cocktails})
+
+
 class CocktailsList(ListView):
     context_object_name = "cocktails"
     model = Cocktail

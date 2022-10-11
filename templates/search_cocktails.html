@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if searched %}
+    <h3>You Searched For..." {{searched}}"</3>
+        <br/>
+        {% for cocktail in cocktails %}
+        <div>
+        <a href="{% url 'cocktail' cocktail.slug %}">
+        {{ cocktail.title }}</a>
+        <img src=" {{ cocktail.image.url }}">
+        <br>
+        {{ cocktail.number_of_likes }}
+    </div>
+        {% endfor %}
+    {% else %}
+    <h3>Please type in the search bar the Cocktail you are looking for</h3>
+    {% endif %}
+{% endblock %}

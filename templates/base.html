@@ -20,7 +20,11 @@
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-    <!-- ALL other pages will be inserted here, is they also are wrapped in a "content block"  -->
+<form method="POST" action="{% url 'search_cocktails'%}">
+    {% csrf_token %}
+    <input type="search" placeholder="Search" aria-label="Search" name="searched">
+    <button class="btn btn-outline-secondary" type="submit">Search Cocktails</button>
+</form>
    {% block content %}
    {% endblock %}
 </body>
