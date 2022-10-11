@@ -5,16 +5,17 @@ from django.urls import reverse_lazy
 from .models import Cocktail
 from .forms import CocktailForm
 from django.http import HttpResponseRedirect
+from django.contrib.postgres.search import SearchVector
 
 
 def search_cocktails(request):
     if request.method == 'POST':
         searched = request.POST.get('searched')
-        cocktails = Cocktail.objects.filter(title__icontains=searched)
-        return render(request, 'search_cocktails.html', {'searched':searched, 'cocktails':cocktails})
-    
+        cocktails = Cocktail.objects.annotate(search=SearchVector('title', 'ingredients'),).filter(search=searched)
+        return render(request, 'search_cocktails.html', {'searched': searched, 'cocktails': cocktails})
+
     else:
-        return render(request, 'search_cocktails.html', {'searched':searched, 'cocktails':cocktails})
+        return render(request, 'search_cocktails.html', {'searched': searched, 'cocktails': cocktails})
 
 
 class CocktailsList(ListView):
@@ -72,6 +73,4 @@ class CocktailLike(View):
             cocktail.likes.remove(request.user)
         else:
             cocktail.likes.add(request.user)
-        
         return HttpResponseRedirect(reverse('cocktail', args=[slug]))
-
