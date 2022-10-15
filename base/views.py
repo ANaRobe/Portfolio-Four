@@ -50,6 +50,7 @@ class CocktailDetail(View):
 class CocktailCreate(CreateView):
     template_name = 'edit.html'
     form_class = CocktailForm
+    success_url = reverse_lazy('home')
 
 
 class CocktailEdit(UpdateView):
