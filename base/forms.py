@@ -16,15 +16,16 @@ class CocktailForm(ModelForm):
             HTML('<h2>Manage Cocktail Recipe</h2>'),
         )
 
-        # print the self object so we can see all fields available
-        print("Self: ", vars(self))
-        # print self.initial to narrow down the search and confirm its a dictionary to access
-        print("Initial Values: ", self.initial)
-
         for field in self.Meta().fields:
+
             helper.layout.append(Field(field, wrapper_class='row'))
-        helper.layout.append(Submit('submit', 'Add', css_class='btn-success'))
-        helper.add_input(Button('delete', 'Delete', onclick='window.location.href="{}"'.format(f'/delete/{self.initial["slug"]}/')))
-        helper.field_class = 'col-9'
-        helper.label_class = 'col-3'
+
+        try:
+            helper.layout.append(Submit('submit', 'Add', css_class='btn-success'))
+            helper.add_input(Button('delete', 'Delete', css_class='btn-danger', onclick='window.location.href="{}"'.format(f'/delete/{self.initial["slug"]}/')))
+            helper.field_class = 'col-9'
+            helper.label_class = 'col-3'
+        except Exception as e:
+            print(e)
+
         return helper
