@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 <h1>{{ cocktail.title }} | {{ cocktail.user }}</li></h1>
 <br>
 <img src=" {{ cocktail.image.url }}">
@@ -22,6 +23,26 @@
         {% else %}
         <button type="submit" name="cocktail_id" value="{{cocktail.slug}}">Like</i></button>
         {% endif %}
+    </form>
+    {% endif %}
+</div>
+
+<div>
+    <h>Remarks:</h>
+    {% for remark in remarks %}
+    <div >
+        <p>{{ remark.user }} |  {{ remark.publish_date }}</p>
+            <span>{{ remark.text | linebreaks }}</span>    
+    </div>
+    {% endfor %}
+</div>
+<div >
+    {% if user.is_authenticated %}
+    <p>Write a remark as: {{ user.username }}</p>
+    <form method="post">
+    {{ remark_form | crispy }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
     </form>
     {% endif %}
 </div>

@@ -70,8 +70,6 @@ class Remark(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='remarks_user')
     text = models.TextField(null=False, blank=False)
     publish_date = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(
-        default=False)
 
     class Meta:
         """Orders articles by published date ascendant """

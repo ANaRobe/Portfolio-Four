@@ -1,4 +1,4 @@
-from .models import Cocktail
+from .models import Cocktail, Remark
 from django.forms import ModelForm
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field, HTML, Submit, Button
@@ -29,3 +29,9 @@ class CocktailForm(ModelForm):
             print(e)
 
         return helper
+
+
+class RemarkForm(ModelForm):
+    class Meta:
+        model = Remark
+        fields = ('text',)

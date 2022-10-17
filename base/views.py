@@ -3,7 +3,7 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.views import View
 from django.urls import reverse_lazy
 from .models import Cocktail
-from .forms import CocktailForm
+from .forms import CocktailForm, RemarkForm
 from django.http import HttpResponseRedirect
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator
@@ -31,7 +31,7 @@ class CocktailDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Cocktail.objects.filter(status=1)
         cocktail = get_object_or_404(queryset, slug=slug)
-        remarks = cocktail.remarks.filter(approved=True).order_by("publish_date")
+        remarks = cocktail.remarks.order_by("publish_date")
         liked = False
         if cocktail.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -43,6 +43,36 @@ class CocktailDetail(View):
                 "cocktail": cocktail,
                 "remarks": remarks,
                 "liked": liked,
+                "remark_form": RemarkForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Cocktail.objects.filter(status=1)
+        cocktail = get_object_or_404(queryset, slug=slug)
+        remarks = cocktail.remarks.order_by("publish_date")
+        liked = False
+        if cocktail.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        remark_form = RemarkForm(data=request.POST)
+
+        if remark_form.is_valid():
+            remark_form.instance.user = request.user
+            remark = remark_form.save(commit=False)
+            remark.cocktail = cocktail
+            remark.save()
+        else:
+            remark_form =RemarkForm()
+
+        return render(
+            request,
+            "cocktail.html",
+            {
+                "cocktail": cocktail,
+                "remarks": remarks,
+                "liked": liked,
+                "remark_form": RemarkForm()
             },
         )
 

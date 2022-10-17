@@ -12,12 +12,9 @@ class CocktailAdmin(SummernoteModelAdmin):
     summernote_fields = ('ingredients', 'steps')
     list_display = ('title', 'slug', 'status', 'publish_date')
     search_fields = ['title', 'ingredients']
- 
+
+
 @admin.register(Remark)
 class RemarkAdmin(admin.ModelAdmin):
-    list_display = ('cocktail', 'user', 'text', 'publish_date', 'approved')
-    list_filter = ('approved', 'publish_date')
-    actions = ['approve-remarks']
-
-    def approve_remarks(self, request, queryset):
-        queryset.update(approved=True)
+    list_display = ('cocktail', 'user', 'text', 'publish_date')
+    list_filter = ('publish_date',)
