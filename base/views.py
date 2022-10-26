@@ -7,6 +7,8 @@ from .forms import CocktailForm, RemarkForm
 from django.http import HttpResponseRedirect
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 def search_cocktails(request):
@@ -62,8 +64,10 @@ class CocktailDetail(View):
             remark = remark_form.save(commit=False)
             remark.cocktail = cocktail
             remark.save()
+            messages.success(request, 'Successfully Remarked')
         else:
             remark_form =RemarkForm()
+            messages.error(request, 'Sorry! We were not able to post this remark. Try again!')
 
         return render(
             request,
@@ -77,23 +81,26 @@ class CocktailDetail(View):
         )
 
 
-class CocktailCreate(CreateView):
+class CocktailCreate(SuccessMessageMixin, CreateView):
     template_name = 'edit.html'
     form_class = CocktailForm
     success_url = reverse_lazy('home')
+    success_message = 'Successfully Added New Cocktail'
 
 
-class CocktailEdit(UpdateView):
+class CocktailEdit(SuccessMessageMixin, UpdateView):
     template_name = 'edit.html'
     form_class = CocktailForm
     queryset = Cocktail.objects.filter(status=1)
+    success_message = 'Successfully Updated Cocktail'
 
 
-class CocktailDelete(DeleteView):
+class CocktailDelete(SuccessMessageMixin, DeleteView):
     model = Cocktail
     template_name = 'cocktail_confirm_delete.html'
     queryset = Cocktail.objects.filter(status=1)
     success_url = reverse_lazy('home')
+    success_message = 'Successfully Removed Cocktail'
 
 
 class CocktailLike(View):
