@@ -1,19 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     {% if searched %}
-    <h3>You Searched For..." {{searched}}"</3>
-        <br/>
-        {% for cocktail in cocktails %}
-        <div>
-        <a href="{% url 'cocktail' cocktail.slug %}">
-        {{ cocktail.title }}</a>
-        <img src=" {{ cocktail.image.url }}">
-        <br>
-        {{ cocktail.number_of_likes }}
-    </div>
-        {% endfor %}
-    {% else %}
+        <div class="row">
+            <div class="col-8 offset-2">
+                <p class="display-2 text-center">You Searched For..." {{searched}}"</p>
+                <hr>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+                <div class="col-12 mt-3 left">
+                    <div class="row">
+                    {% for cocktail in cocktails %}
+                        <div class="col-md-4">
+                                <a href="{% url 'cocktail' cocktail.slug %}">{{ cocktail.title }}</a>
+                                <img class="card-img-top img-fit" src=" {{ cocktail.image.url }}">
+                                <br>
+                                {{ cocktail.number_of_likes }}
+                        </div>
+                    </div> 
+                </div>
+        </div>    
+                    {% endfor %}
+                    {% else %}
     <h3>Please type in the search bar the Cocktail you are looking for</h3>
     {% endif %}
 {% endblock %}
