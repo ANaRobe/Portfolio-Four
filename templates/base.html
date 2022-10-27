@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/5d621cadca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Cocktail</title>
 
@@ -21,7 +22,7 @@
 
 <body>
    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <div class="container">
             <a href="{% url 'home' %}" class="navbar-brand mb-0 h3">Cocktail</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -29,62 +30,96 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto ms-2 mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto ms-2 mb-2 mb-lg-0">
                     <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item active"><a href="{% url 'favourites' %}" class="nav-link active">My Favourites</a></li>
                     {% endif %}
                 </ul>
             
-        <!--Search Form-->
-        {% url 'search_cocktails' as search_cocktails %}
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-            <form method="POST" action="{% url 'search_cocktails' %}">
-                <div class="input-group w-100">
-                    {% csrf_token %}
-                    <input class="form-control search-bar-form border" type="search" name="searched"
-                        placeholder="Search for cocktails...">
-                    <div class="input-group-append">
-                        <button class="form-control search-bar-form btn search-btn border" type="submit">
-                            <span class="icon">
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </button>
-                    </div>
+                <!--Search Form-->
+                {% url 'search_cocktails' as search_cocktails %}
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                    <form method="POST" action="{% url 'search_cocktails' %}">
+                        <div class="input-group w-100">
+                            {% csrf_token %}
+                            <input class="form-control search-bar-form border" type="search" name="searched" placeholder="Search for cocktails...">
+                            <div class="input-group-append">
+                                <button class="form-control search-bar-form btn search-btn border" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
         
-        {% if user.is_authenticated %}
-        <ul class="navbar-nav">
-
-            <li class="nav-item active"><a class="nav-link" href="{% url 'account_logout' %}">Log Out</a></li>
-            {% else %}
-            <li class="nav-item active"><a href="{% url 'account_signup' %}" class="nav-link active">Sign Up</a></li>
-            <li class="nav-item active"><a href="{% url 'account_login' %}" class="nav-link active">Log In</a></li>
-        </ul>
-        {% endif %}
-    </div>
-</div>
-</nav>
-
-
-<!--Messages-->
-
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-        {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-            {{ message | safe }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="{% url 'account_logout' %}">Log Out</a></li>
+                    {% else %}
+                    <li class="nav-item active"><a href="{% url 'account_signup' %}" class="nav-link active">Sign Up</a></li>
+                    <li class="nav-item active"><a href="{% url 'account_login' %}" class="nav-link active">Log In</a></li>
+                </ul>
+                {% endif %}
+            </div>
         </div>
-        {% endfor %}
-    </div>
-</div>
-   {% block content %}
-   {% endblock %}
+    </nav>
 
-   
+    <!--Messages-->
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                {{ message | safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+
+    <!--Footer-->
+    <footer class="mt-auto bg-light">
+        <ul class="list-inline d-flex text-white justify-content-center ">
+            <li class="btn btn-outline-dark btn-floating m-1">
+                <a class="link-dark" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </li>
+            <li class="btn btn-outline-dark btn-floating m-1">
+                <a class="link-dark" href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+            <li class="btn btn-outline-dark btn-floating m-1">
+                <a class="link-dark" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li class="btn btn-outline-dark btn-floating m-1">
+                <a class="link-dark" href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our YouTube page (opens in a new tab)">
+                        <i class="fa-brands fa-youtube"></i>
+                </a>
+            </li>
+            <li class="btn btn-outline-dark btn-floating m-1">
+                <a  class="link-dark" href="https://github.com/CluelessBiker" target="_blank" rel="noopener" aria-label="Visit my Github page (opens in a new tab)">
+                        <i class="fa-brands fa-github"></i>
+                </a>
+            </li>
+            <li class="btn btn-outline-dark btn-floating m-1">
+                <a class="link-dark" href="https://www.linkedin.com/in/lauren-nicole-popich-1ab87539/" target="_blank" rel="noopener" aria-label="Visit my Linkedin page (opens in a new tab)">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">    
+            <p class="text-white">© 2022 Copyright: Cocktail</p>
+          </div>
+    </footer>      
 </body>
 </html>
