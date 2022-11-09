@@ -3,51 +3,56 @@
 {% load static %}
 
 {% if user.is_authenticated %}
-<div class="row">
-    <div class="col-8 offset-2">
-        <h1 class="h1 display-2 text-center">Favourite Recipes</h1>
-        <hr>
-    </div>
-</div>
-
-<div class="container-fluid">
+<section>
     <div class="row">
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for cocktail in page_obj %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <a href="{% url 'cocktail' cocktail.slug %}" class="no-deco text-black">
+        <div class="col-8 offset-2">
+        <h1 class="page-title text-center mt-5 mb-2">My <i class="fa-solid fa-heart"></i> Cocktails</h1> 
+        <hr>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for cocktail in page_obj %}
+                    <div class="col-md-4">
+                        <a href="{% url 'cocktail' cocktail.slug %}" class="text-decoration-none text-muted ">
                             <div class="card-body">
-                                <div class="image-container">
-                                    {% if "placeholder" not in cocktail.image.url %}
-                                    <img class="card-img-top img-fit" src=" {{ cocktail.image.url }}" height="300" alt="{{ cocktail.title }}">
-                                    {% elif recipe.image_url %}
-                                    <img class="card-img-top img-fit" src="{{ cocktail.image_url}}" height="300" alt="{{ cocktail.title }}">
-                                    {% else %}
-                                    <img class="card-img-top img-fit" src="{% static 'images/cocktails.jpg' %}" height="300" alt="Cocktails">
-                                    {% endif %}
-                                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% empty %}
-                <div class="container log-box">
-                    <div class="row justify-content-md-center">
-                        <div class="col-md-12 mt-4">
-                            <p class="lead text-center">It looks like you haven't liked any cocktails yet!
-                            </p>
+                                {% if "placeholder" in cocktail.image.url %}
+                                <img class="card-img-top img-fit" height="300px"
+                                    src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667111171/static/images/logo_xlknhs.png">
+                                {% else %}      
+                                <img class="card-img-top img-fit" height="300px" src=" {{ cocktail.image.url }}" alt="{{ cocktail.title }}">                                     {% endif %} 
+                                <h2 class="card-title text-muted">{{ cocktail.title }}</h2>
+                                <hr />
+                                <p class="card-text h6">{{ cocktail.number_of_likes }} <i class="fa-solid fa-heart"></i></p>
+                            </div>
+                        </a>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% empty %}
+                    <div class="container log-box">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-12 mt-4">
+                                <p class="lead text-center">It looks like you haven't liked any cocktails yet!
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
-</div>
-
 {% include "pagination.html" %}
+    <hr>
+    <img src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667053877/pexels-timur-weber-8679591_h0rw33.jpg" width="100%" alt="Cocktail"/>
+    <hr>
+</section>
+
 
 {% else %}
 

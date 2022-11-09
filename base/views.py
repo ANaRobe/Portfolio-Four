@@ -26,6 +26,7 @@ class CocktailsList(ListView):
     model = Cocktail
     queryset = Cocktail.objects.filter(status=1).order_by("title")
     template_name = "index.html"
+    paginate_by = 6
 
 
 class CocktailDetail(View):
@@ -121,7 +122,7 @@ class UsersFavCocktails(View):
 
         if request.user.is_authenticated:
             cocktails = Cocktail.objects.filter(likes=request.user.id)
-            paginator = Paginator(cocktails, 6)  # Show 6 Recipes per page.
+            paginator = Paginator(cocktails, 12)  # Show 9 Recipes per page.
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
             return render(request, 'favourites.html', {

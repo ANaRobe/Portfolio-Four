@@ -22,9 +22,9 @@
 
 <body>
    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a href="{% url 'home' %}" class="navbar-brand mb-0 h3">Cocktail</a>
+            <a href="{% url 'home' %}" class="navbar-brand mb-0 h3"><img src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667035117/logo_xou93d.png" width="50px" alt=""/>Cocktail</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -57,11 +57,11 @@
                 </div>
         
                 {% if user.is_authenticated %}
-                <ul class="navbar-nav">
-                    <li class="nav-item active"><a class="nav-link" href="{% url 'account_logout' %}">Log Out</a></li>
+                <ul class="navbar-nav list-unstyled">
+                    <li class="nav-item list-unstyled active"><a class="nav-link  text-decoration-none text-muted " href="{% url 'account_logout' %}">Log Out</a></li>
                     {% else %}
-                    <li class="nav-item active"><a href="{% url 'account_signup' %}" class="nav-link active">Sign Up</a></li>
-                    <li class="nav-item active"><a href="{% url 'account_login' %}" class="nav-link active">Log In</a></li>
+                    <li class="nav-item list-unstyled active"><a href="{% url 'account_signup' %}" class="nav-link active text-decoration-none text-muted ">Sign Up</a></li>
+                    <li class="nav-item list-unstyled active"><a href="{% url 'account_login' %}" class="nav-link active text-decoration-none text-muted ">Log In</a></li>
                 </ul>
                 {% endif %}
             </div>
@@ -85,7 +85,7 @@
 
     <!--Footer-->
     <footer class="mt-auto bg-light">
-        <ul class="list-inline d-flex text-white justify-content-center ">
+        <ul class="list-inline list-unstyled d-flex text-white justify-content-center">
             <li class="btn btn-outline-dark btn-floating m-1">
                 <a class="link-dark" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)">
                     <i class="fa-brands fa-facebook-f"></i>
@@ -97,23 +97,13 @@
                 </a>
             </li>
             <li class="btn btn-outline-dark btn-floating m-1">
-                <a class="link-dark" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
+                <a class="link-dark" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
             </li>
             <li class="btn btn-outline-dark btn-floating m-1">
                 <a class="link-dark" href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our YouTube page (opens in a new tab)">
                         <i class="fa-brands fa-youtube"></i>
-                </a>
-            </li>
-            <li class="btn btn-outline-dark btn-floating m-1">
-                <a  class="link-dark" href="https://github.com/CluelessBiker" target="_blank" rel="noopener" aria-label="Visit my Github page (opens in a new tab)">
-                        <i class="fa-brands fa-github"></i>
-                </a>
-            </li>
-            <li class="btn btn-outline-dark btn-floating m-1">
-                <a class="link-dark" href="https://www.linkedin.com/in/lauren-nicole-popich-1ab87539/" target="_blank" rel="noopener" aria-label="Visit my Linkedin page (opens in a new tab)">
-                    <i class="fa-brands fa-linkedin-in"></i>
                 </a>
             </li>
         </ul>
