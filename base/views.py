@@ -9,7 +9,9 @@ from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 def search_cocktails(request):
     if request.method == 'POST':
@@ -82,21 +84,29 @@ class CocktailDetail(View):
         )
 
 
-class CocktailCreate(SuccessMessageMixin, CreateView):
+class CocktailCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'edit.html'
     form_class = CocktailForm
     success_url = reverse_lazy('home')
     success_message = 'Successfully Added New Cocktail'
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CocktailCreate, self).form_valid(form)
 
-class CocktailEdit(SuccessMessageMixin, UpdateView):
+
+class CocktailEdit(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     template_name = 'edit.html'
     form_class = CocktailForm
     queryset = Cocktail.objects.filter(status=1)
     success_message = 'Successfully Updated Cocktail'
 
+    def test_func(self):
+        cocktail = get_object_or_404(Cocktail, slug=self.kwargs["slug"])
+        return self.request.user == cocktail.user
 
-class CocktailDelete(SuccessMessageMixin, DeleteView):
+
+class CocktailDelete(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = Cocktail
     template_name = 'cocktail_confirm_delete.html'
     queryset = Cocktail.objects.filter(status=1)
@@ -116,13 +126,13 @@ class CocktailLike(View):
         return HttpResponseRedirect(reverse('cocktail', args=[slug]))
 
 
-class UsersFavCocktails(View):
+class UsersFavCocktails(LoginRequiredMixin, View):
 
     def get(self, request):
 
         if request.user.is_authenticated:
             cocktails = Cocktail.objects.filter(likes=request.user.id)
-            paginator = Paginator(cocktails, 12)  # Show 9 Recipes per page.
+            paginator = Paginator(cocktails, 6)  # Show 6 Recipes per page.
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
             return render(request, 'favourites.html', {

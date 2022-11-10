@@ -7,7 +7,7 @@ from crispy_forms.layout import Layout, Field, HTML, Submit, Button
 class CocktailForm(ModelForm):
     class Meta:
         model = Cocktail
-        fields = ['title', 'user', 'image', 'ingredients', 'steps', 'mixing_time', 'taste', 'slug']
+        fields = ['title', 'image', 'ingredients', 'steps', 'mixing_time', 'taste', 'slug']
 
     @property
     def helper(self):
