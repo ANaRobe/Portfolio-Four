@@ -69,7 +69,7 @@ class CocktailDetail(View):
             remark.save()
             messages.success(request, 'Successfully Remarked')
         else:
-            remark_form =RemarkForm()
+            remark_form = RemarkForm()
             messages.error(request, 'Sorry! We were not able to post this remark. Try again!')
 
         return render(

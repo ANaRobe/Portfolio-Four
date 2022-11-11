@@ -3,9 +3,12 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-
+<div class="container">
+        <div class="col-10 mt-3 offset-1 g-0">
     {% crispy form %}
-    
+
+        </div>
+</div>
 {% else %}
 
     {% include "account/login.html" %}

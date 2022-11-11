@@ -33,7 +33,7 @@
                         {% endif %}
                         
                     </div>
-                    <div class="col m">
+                    <div class="col">
                         <p class="card-text text-muted h6 mt-2 mb-2">{{ cocktail.last_update }}</p>
                     </div>
                 </div>
@@ -41,25 +41,49 @@
                         <h4 class=" text-center text-light bg-dark" >Edit</h4>
                         <hr>
                 </a>
-                <div class="row">
+                <div class="row mb-4">
+                    <h5>Main Taste :</h5>
+                    <br>
+                    <div class="col">{{ cocktail.taste }}</div>
+                </div> 
+                <div class="row mb-4">
+                    <h5>Mixing duration :</h5>
+                    <br>
+                    <div class="col">{{ cocktail.mixing_time }} minutes</div>
+                </div> 
+                <div class="row mb-4">
                     <h5>Ingredients:</h5>
+                    <br>
                     <div class="col">{{ cocktail.ingredients }}</div>
                 </div>
-                <div class="row">
+                <div class="row mb-4">
                     <h5>Instructions:</h5>
+                    <br>
                     <div class="col">{{ cocktail.instructions }}</div>
                 </div>
-                <div class="row">
-                    <h5>Main Taste :</h5>
-                    <div class="col">{{ cocktail.taste }}</div>
-                </div>         
+        
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
-            <div class="mt-md-5">
+            <div class="md-5">
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-10">
                         <h3 class="text-center text-light bg-dark">Remarks</h3>
+                        <div>
+                            {% if user.is_authenticated %}
+                            <h5 class="text-center mt-4 mb-2">Write a remark as: {{ user.username }}</h5>
+                            <form method="post">
+                                {{ remark_form | crispy }}
+                                {% csrf_token %} 
+                                <button type="submit" class="btn btn-signup btn-dark btn-lg mb-3 mt-3">Submit</button>  
+                            </form>
+                            
+                        {% else %}
+                            <p class=" text-center mt-4 text-light bg-dark">
+                                <a href="{% url 'account_signup' %}" class=" text-light">Register</a> or <a href="{% url 'account_login' %}" class=" text-light">Log In</a> to remark {{cocktail.title}} Cocktail!
+                            </p>
+                        {% endif %}
+                        </div>
                         {% for remark in remarks %}
                             <div class="card mt-5 rounded-0">
 
@@ -68,22 +92,8 @@
                                     <p class="card-text lead">{{ remark.text | linebreaks }}</p>
                                 </div>
                             </div>
-                            {% endfor %}
-                            <div>
-                                {% if user.is_authenticated %}
-                                <h5 class="text-center underline mt-4 mb-2">Write a remark as: {{ user.username }}</h5>
-                                <form method="post">
-                                    {{ remark_form | crispy }}
-                                    {% csrf_token %} 
-                                    <button type="submit" class="btn btn-signup btn-secondary btn-lg mb-3 mt-3">Submit</button>  
-                                </form>
-                                
-                            {% else %}
-                                <p class="review-text text-center mt-4 text-light bg-dark">
-                                    <a href="{% url 'account_signup' %}" class=" text-light">Register</a> or <a href="{% url 'account_login' %}" class=" text-light">Log In</a> to remark {{cocktail.title}} Cocktail!
-                                </p>
-                            {% endif %}
-                            </div>
+                        {% endfor %}
+                            
                     </div>
                 </div>
             </div>       

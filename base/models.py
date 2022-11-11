@@ -16,6 +16,7 @@ class Cocktail(models.Model):
     slug = models.SlugField(max_length=50, unique=True)
     image = CloudinaryField('image', default='placeholder')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='remarks', null=False, blank=False,)
+    alcoholic = models.BooleanField(default=True)
     likes = models.ManyToManyField(User, related_name='cocktail_hearts', blank=True)
     ingredients = models.TextField(null=False, blank=False)
     steps = models.TextField(null=False, blank=False)
@@ -72,8 +73,8 @@ class Remark(models.Model):
     publish_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        """Orders articles by published date ascendant """
-        ordering = ['publish_date']
+        """Orders articles by published date descendant """
+        ordering = ['-publish_date']
 
     def __str__(self):
         return f"Comment{self.text} by {self.user}"
