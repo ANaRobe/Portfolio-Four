@@ -1,5 +1,21 @@
-<form method="POST">
-    {% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}"?</p>
-    <button type="submit" value="Delete">Delete</button>
-</form>
+
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+<div class=" h-100 p-5 text-center bg-dark d-flex justify-content-center align-items-center">
+      <div class="d-flex justify-content-center align-items-center">
+          <div class="text-white">
+            <form method="POST">
+                {% csrf_token %}
+                <p>Are you sure you want to delete "{{ object }}"?</p>
+                <button type="submit" class="btn btn-secondary" value="Delete">Delete</button>
+            </form>
+          </div>
+      </div>
+</div>
+
+{% endblock %}

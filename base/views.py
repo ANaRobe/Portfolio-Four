@@ -26,7 +26,7 @@ def search_cocktails(request):
 class CocktailsList(ListView):
     context_object_name = "cocktails"
     model = Cocktail
-    queryset = Cocktail.objects.filter(status=1).order_by("title")
+    queryset = Cocktail.objects.filter(status=1).order_by("-publish_date")
     template_name = "index.html"
     paginate_by = 6
 
@@ -113,6 +113,10 @@ class CocktailDelete(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixi
     success_url = reverse_lazy('home')
     success_message = 'Successfully Removed Cocktail'
 
+    def test_func(self):
+        cocktail = get_object_or_404(Cocktail, slug=self.kwargs["slug"])
+        return self.request.user == cocktail.user
+
 
 class CocktailLike(View):
 
@@ -135,8 +139,20 @@ class UsersFavCocktails(LoginRequiredMixin, View):
             paginator = Paginator(cocktails, 6)  # Show 6 Recipes per page.
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
-            return render(request, 'favourites.html', {
-                'page_obj': page_obj
-                })
+            return render(request, 'favourites.html', {'page_obj': page_obj})
         else:
             return render(request, 'favourites.html')
+
+
+class UsersCocktails(LoginRequiredMixin, ListView):
+    
+    def get(self, request):
+
+        if request.user.is_authenticated:
+            cocktails = Cocktail.objects.filter(user=request.user.id)
+            paginator = Paginator(cocktails, 6)  # Show 6 Recipes per page.
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            return render(request, 'my_cocktails.html', {'page_obj': page_obj})
+        else:
+            return render(request, 'my_cocktails.html')

@@ -1,4 +1,4 @@
-from .views import CocktailsList, CocktailDetail, CocktailCreate, CocktailEdit, CocktailDelete, CocktailLike, search_cocktails, UsersFavCocktails
+from .views import CocktailsList, CocktailDetail, CocktailCreate, CocktailEdit, CocktailDelete, CocktailLike, search_cocktails, UsersFavCocktails, UsersCocktails
 from django.urls import path
 
 urlpatterns = [
@@ -10,4 +10,5 @@ urlpatterns = [
     path('like/<slug:slug>', CocktailLike.as_view(), name='cocktail_like'),
     path('favourites/', UsersFavCocktails.as_view(), name='favourites'),
     path('<slug:slug>/', CocktailDetail.as_view(), name='cocktail'),
+    path('my_cocktails', UsersCocktails.as_view(), name='my_cocktails'),
 ]

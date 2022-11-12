@@ -29,6 +29,9 @@
                                 {% else %}
                                 <img class="card-img-top img-fit" height="300empx" src=" {{ cocktail.image.url }}" alt="{{ cocktail.title }}">
                                 {% endif %}
+                                {% if cocktail.alcoholic %}
+                                    <em>Alcoholic</em>
+                                {% endif%}
                                 <h2 class="card-title ">{{ cocktail.title }}</h2>
                                 <hr />
                                 <p class="card-text h6">{{ cocktail.number_of_likes }} <i class="fa-solid fa-heart"></i></p>

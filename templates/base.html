@@ -34,7 +34,8 @@
                 <ul class="navbar-nav me-auto ms-2 mb-2 mb-lg-0">
                     <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item active"><a href="{% url 'favourites' %}" class="nav-link active">My Favourites</a></li>
+                    <li class="nav-item active"><a href="{% url 'favourites' %}" class="nav-link active">My  Favourites</a></li>
+                    <li class="nav-item active"><a href="{% url 'my_cocktails' %}" class="nav-link active">My Cocktails</a></li>
                     {% endif %}
                 </ul>
             
