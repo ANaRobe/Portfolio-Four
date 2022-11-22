@@ -32,10 +32,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto ms-2 mb-2 mb-lg-0">
-                    <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
+                    <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link active hover">Home</a></li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item active"><a href="{% url 'favourites' %}" class="nav-link active">My  Favourites</a></li>
-                    <li class="nav-item active"><a href="{% url 'my_cocktails' %}" class="nav-link active">My Cocktails</a></li>
+                    <li class="nav-item active"><a href="{% url 'favourites' %}" class="nav-link active hover">My  Favourites</a></li>
+                    <li class="nav-item active"><a href="{% url 'my_cocktails' %}" class="nav-link active hover">My Cocktails</a></li>
                     {% endif %}
                 </ul>
             
@@ -59,10 +59,10 @@
         
                 {% if user.is_authenticated %}
                 <ul class="navbar-nav list-unstyled">
-                    <li class="nav-item list-unstyled active"><a class="nav-link  text-decoration-none text-muted " href="{% url 'account_logout' %}">{{ user }} | Log Out</a></li>
+                    <li class="nav-item list-unstyled active"><a class="nav-link  text-decoration-none text-muted hover" href="{% url 'account_logout' %}">{{ user }} | Log Out</a></li>
                     {% else %}
-                    <li class="nav-item list-unstyled active"><a href="{% url 'account_signup' %}" class="nav-link active text-decoration-none text-muted ">Sign Up</a></li>
-                    <li class="nav-item list-unstyled active"><a href="{% url 'account_login' %}" class="nav-link active text-decoration-none text-muted ">Log In</a></li>
+                    <li class="nav-item list-unstyled active"><a href="{% url 'account_signup' %}" class="nav-link active text-decoration-none text-muted hover ">Sign Up</a></li>
+                    <li class="nav-item list-unstyled active"><a href="{% url 'account_login' %}" class="nav-link active text-decoration-none text-muted hover">Log In</a></li>
                 </ul>
                 {% endif %}
             </div>
@@ -88,22 +88,22 @@
     <footer class="mt-auto bg-light">
         <ul class="list-inline list-unstyled d-flex text-white justify-content-center">
             <li class="btn btn-outline-dark btn-floating m-1">
-                <a class="link-dark" href="https://facebook.com" target="_blank" rel="shortcut icon" aria-label="Visit our Facebook page (opens in a new tab)">
+                <a class="link-dark hover" href="https://facebook.com" target="_blank" rel="shortcut icon" aria-label="Visit our Facebook page (opens in a new tab)">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
             </li>
             <li class="btn btn-outline-dark btn-floating m-1">
-                <a class="link-dark" href="https://twitter.com" target="_blank" rel="shortcut icon" aria-label="Visit our Twitter page (opens in a new tab)">
+                <a class="link-dark hover" href="https://twitter.com" target="_blank" rel="shortcut icon" aria-label="Visit our Twitter page (opens in a new tab)">
                     <i class="fa-brands fa-twitter"></i>
                 </a>
             </li>
             <li class="btn btn-outline-dark btn-floating m-1">
-                <a class="link-dark" href="https://instagram.com" target="_blank" rel="shortcut icon" aria-label="Visit our Instagram page (opens in a new tab)">
+                <a class="link-dark hover" href="https://instagram.com" target="_blank" rel="shortcut icon" aria-label="Visit our Instagram page (opens in a new tab)">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
             </li>
             <li class="btn btn-outline-dark btn-floating m-1">
-                <a class="link-dark" href="https://youtube.com" target="_blank" rel="shortcut icon" aria-label="Visit our YouTube page (opens in a new tab)">
+                <a class="link-dark hover" href="https://youtube.com" target="_blank" rel="shortcut icon" aria-label="Visit our YouTube page (opens in a new tab)">
                         <i class="fa-brands fa-youtube"></i>
                 </a>
             </li>

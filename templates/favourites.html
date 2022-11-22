@@ -21,7 +21,7 @@
                     {% for cocktail in page_obj %}
                     <div class="col-md-4">
                         <a href="{% url 'cocktail' cocktail.slug %}" class="text-decoration-none text-muted ">
-                            <div class="card-body">
+                            <div class="card-body hover">
                                 {% if "placeholder" in cocktail.image.url %}
                                 <img class="card-img-top img-fit" height="300px"
                                     src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667111171/static/images/logo_xlknhs.png">

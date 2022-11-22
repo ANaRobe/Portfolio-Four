@@ -24,8 +24,8 @@ class CocktailForm(ModelForm):
             helper.layout.append(Field(field, wrapper_class='row'))
 
         try:
-            helper.layout.append(Submit('submit', ' Save', css_class='btn-dark mt-4 px-3'))
-            helper.add_input(Button('delete', 'Delete', css_class='btn-danger mt-4', onclick='window.location.href="{}"'.format(f'/delete/{slugify(self.initial["title"])}/')))
+            helper.layout.append(Submit('submit', ' Save', css_class='btn-dark mt-4 px-3 hover'))
+            helper.add_input(Button('delete', 'Delete', css_class='btn-danger mt-4 hover', onclick='window.location.href="{}"'.format(f'/delete/{slugify(self.initial["title"])}/')))
             helper.field_class = 'col-6 mb-4 mt-4'
             helper.label_class = 'col-3 mb-4 mt-4'
         except Exception as e:

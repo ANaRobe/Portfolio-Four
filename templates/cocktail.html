@@ -42,7 +42,7 @@
             <!--Edit-->
             {% if user.is_authenticated and user.id == cocktail.user.id %}
             <a href="{% url 'edit' cocktail.slug %}" class="text-decoration-none text-muted ">
-                <h4 class=" text-center text-light bg-dark" >Edit</h4>
+                <h4 class=" text-center text-light bg-dark hover" >Edit</h4>
                 <hr>
             </a>
             {% else %}
@@ -86,11 +86,11 @@
                             <form method="post">
                                 {{ remark_form | crispy }}
                                 {% csrf_token %} 
-                                <button type="submit" class="btn btn-signup btn-dark btn-lg mb-3 mt-3">Submit</button>  
+                                <button type="submit" class="btn btn-signup btn-dark btn-lg mb-3 mt-3 hover">Submit</button>  
                             </form>    
                         {% else %}
-                            <p class=" text-center mt-4 text-light bg-dark">
-                                <a href="{% url 'account_signup' %}" class=" text-light">Register</a> or <a href="{% url 'account_login' %}" class=" text-light">Log In</a> to remark {{cocktail.title}} Cocktail!
+                            <p class=" text-center mt-4 text-light bg-dark ">
+                                <a href="{% url 'account_signup' %}" class=" text-light hover ">Register</a> or <a href="{% url 'account_login' %}" class=" text-light hover">Log In</a> to remark {{cocktail.title}} Cocktail!
                             </p>
                         {% endif %}
                         </div>
