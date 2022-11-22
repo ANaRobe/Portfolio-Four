@@ -6,9 +6,13 @@
 <div class="pimg1">
     <!--ADD Cocktail-->
     <div class="ptext">
+        {% if user.is_authenticated %}
         <a href="{% url 'add' %}" class="text-decoration-none text-muted "> 
             <span class="border hover">Add Cocktail</span>
         </a>
+        {% else %}
+        <h1 class="border">C o c k t a i l</h1>
+        {% endif %}
     </div>
 </div>
 <hr>
@@ -38,9 +42,10 @@
 </section>
 <hr>
 <!--Cocktails LIST-->
-<section class="section">
+
+<div class="container-fluid">
     <div class="row">
-        <div class="col-12 mt-4 left">
+        <div class="col-12 mt-3 left">
             <div class="row">
                 {% for cocktail in cocktails %}
                     <div class="col-md-4">
@@ -71,7 +76,7 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 <hr>
 <!--Bottom Image-->
 <div class="pimg1">

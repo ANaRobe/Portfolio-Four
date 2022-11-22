@@ -69,12 +69,14 @@ body, html{
     background-color: transparent;
 }
 
+.hover:hover{
+    opacity: 0.50;
+}
+
+
 @media(max-width:568){
     .pimg1, .pimg2, .pimg3, .pimg4{
         background-attachment: scroll;
     }
 }
 
-.hover:hover{
-    opacity: 0.50;
-}
