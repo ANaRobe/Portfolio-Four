@@ -1,0 +1,76 @@
+body, html{
+    height:100%;
+    margin:0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+/* Index Page */
+.pimg1{
+    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1667053060/pexels-denys-gromov-12645208_akwwui.jpg");
+    min-height: 100%;
+}
+.pimg2{
+    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1667053877/pexels-timur-weber-8679591_h0rw33.jpg");
+    min-height: 400px;
+}
+
+/* My Cocktails Page*/
+.pimg3{
+    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1669127133/pexels-olena-bohovyk-3604314_vjso1l_3_bqkxnr.jpg");
+    min-height: 400px;
+}
+
+/* Favourites Page*/
+.pimg4{
+    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1669072009/pexels-rebecca-5566052_dxw3gj.jpg");
+    min-height: 400px;
+}
+
+/* PARALLAX */
+.pimg1, .pimg2, .pimg3, .pimg4{
+    position: relative;
+    background-position: center;
+    filter: brightness(80%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.section{
+    text-align: center;
+    padding: 5em 5em;
+}
+
+.section-dark{
+    background-color: #282e34;
+    color: #ddd;
+}
+
+.ptext{
+    position: absolute;
+    top:50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+}
+
+.ptext .border{
+    background-color: #111;
+    color: white;
+    padding: 10px;
+}
+
+.ptext .trans{
+    background-color: transparent;
+}
+
+@media(max-width:568){
+    .pimg1, .pimg2, .pimg3, .pimg4{
+        background-attachment: scroll;
+    }
+}

@@ -4,7 +4,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field, HTML, Submit, Button
 from django.utils.text import slugify
 
-
+# Create Update Delete Cocktail
 class CocktailForm(ModelForm):
 
     class Meta:
@@ -34,6 +34,7 @@ class CocktailForm(ModelForm):
         return helper
 
 
+# Create Remark
 class RemarkForm(ModelForm):
     class Meta:
         model = Remark

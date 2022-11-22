@@ -13,6 +13,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.contrib.auth.mixins import UserPassesTestMixin
 
+
 def search_cocktails(request):
     if request.method == 'POST':
         searched = request.POST.get('searched')

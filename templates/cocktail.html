@@ -2,73 +2,79 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="row">
-    <div class="col-8 offset-2">
-        <h2 class="page-title text-left mt-4 mb-2">{{ cocktail.title }}  |  {{ cocktail.user }}</h2>
-        <hr>
-    </div>
+<!--Title and User-->
+<div class="col-8 offset-2">
+    <h2 class="page-title text-left mt-4 mb-2">{{ cocktail.title }}  |  {{ cocktail.user }}</h2>
+    <hr>
+</div>
 
+<!--Model Display-->
 <div class="container-fluid mb-3">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2 me-5">
-                {% if "placeholder" in cocktail.image.url %}
-                <img class="card-img-top img-fit" height="300"
-                    src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667031562/logo_ysndhi.png">
-                {% else %}
-                <img class="card-img-top img-fit" height="300"  src=" {{ cocktail.image.url }}" alt="{{ cocktail.title }}">
-                {% endif %}
-                <hr />
-                <div class="row">
-                    <div class="col">
-                        {% if user.is_authenticated %}
-                        <form class="card-text text-muted h6"  action="{% url 'cocktail_like' cocktail.slug %}" method="POST">
-                            <strong>{{ cocktail.number_of_likes }}</strong>
-                            {% csrf_token %}
-                            {% if liked %}
-                            <button class="btn btn-signup btn-lg" type="submit" name="cocktail_id" value="{{cocktail.slug}}"><i class="fa-solid fa-heart"></i></button>
-                            {% else %}
-                            <button class="btn btn-signup btn-lg" type="submit" name="cocktail_id" value="{{cocktail.slug}}"><i class="far fa-heart"></i></button>
-                            {% endif %}
-                        </form>
+            <!--Image-->
+            {% if "placeholder" in cocktail.image.url %}
+            <img class="card-img-top img-fit" height="300" src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667031562/logo_ysndhi.png">
+            {% else %}
+            <img class="card-img-top img-fit" height="300"  src=" {{ cocktail.image.url }}" alt="{{ cocktail.title }}">
+            {% endif %}
+            <hr />
+            <div class="row">
+                <!--Likes-->
+                <div class="col">
+                    {% if user.is_authenticated %}
+                    <form class="card-text text-muted h6"  action="{% url 'cocktail_like' cocktail.slug %}" method="POST">
+                        <strong>{{ cocktail.number_of_likes }}</strong>
+                        {% csrf_token %}
+                        {% if liked %}
+                        <button class="btn btn-signup btn-lg" type="submit" name="cocktail_id" value="{{cocktail.slug}}"><i class="fa-solid fa-heart"></i></button>
+                        {% else %}
+                        <button class="btn btn-signup btn-lg" type="submit" name="cocktail_id" value="{{cocktail.slug}}"><i class="far fa-heart"></i></button>
                         {% endif %}
-                        
-                    </div>
-                    <div class="col">
-                        <p class="card-text text-muted h6 mt-2 mb-2">{{ cocktail.last_update }}</p>
-                    </div>
+                    </form>
+                    {% endif %}    
                 </div>
-                {% if user.is_authenticated and user.id == cocktail.user.id %}
-                <a href="{% url 'edit' cocktail.slug %}" class="text-decoration-none text-muted ">
-                        <h4 class=" text-center text-light bg-dark" >Edit</h4>
-                        <hr>
-                </a>
-                {% else %}
-                    <h4 class="bg-dark" ></h4>
-                    <hr>
-                {% endif %}
-                <div class="row mb-4">
-                    <h5>Main Taste :</h5>
-                    <br>
-                    <div class="col">{{ cocktail.taste }}</div>
-                </div> 
-                <div class="row mb-4">
-                    <h5>Mixing duration :</h5>
-                    <br>
-                    <div class="col">{{ cocktail.mixing_time }} minutes</div>
-                </div> 
-                <div class="row mb-4">
-                    <h5>Ingredients:</h5>
-                    <br>
-                    <div class="col">{{ cocktail.ingredients }}</div>
+                <!--Date-->
+                <div class="col">
+                    <p class="card-text text-muted h6 mt-2 mb-2">{{ cocktail.last_update }}</p>
                 </div>
-                <div class="row mb-4">
-                    <h5>Instructions:</h5>
-                    <br>
-                    <div class="col">{{ cocktail.steps }}</div>
-                </div>
-        
+            </div>
+            <!--Edit-->
+            {% if user.is_authenticated and user.id == cocktail.user.id %}
+            <a href="{% url 'edit' cocktail.slug %}" class="text-decoration-none text-muted ">
+                <h4 class=" text-center text-light bg-dark" >Edit</h4>
+                <hr>
+            </a>
+            {% else %}
+            <hr>
+            {% endif %}
+            <!--Taste-->
+            <div class="row mb-4">
+                <h5>Main Taste :</h5>
+                <br>
+                <div class="col">{{ cocktail.taste }}</div>
+            </div> 
+            <!--Mixing time-->
+            <div class="row mb-4">
+                <h5>Mixing duration :</h5>
+                <br>
+                <div class="col">{{ cocktail.mixing_time }} minutes</div>
+            </div> 
+            <!--Ingredients-->
+            <div class="row mb-4">
+                <h5>Ingredients:</h5>
+                <br>
+                <div class="col">{{ cocktail.ingredients }}</div>
+            </div>
+            <!--Steps-->
+            <div class="row mb-4">
+                <h5>Instructions:</h5>
+                <br>
+                <div class="col">{{ cocktail.steps }}</div>
+            </div>
         </div>
 
+        <!--Remarks-->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="md-5">
                 <div class="row">
@@ -81,8 +87,7 @@
                                 {{ remark_form | crispy }}
                                 {% csrf_token %} 
                                 <button type="submit" class="btn btn-signup btn-dark btn-lg mb-3 mt-3">Submit</button>  
-                            </form>
-                            
+                            </form>    
                         {% else %}
                             <p class=" text-center mt-4 text-light bg-dark">
                                 <a href="{% url 'account_signup' %}" class=" text-light">Register</a> or <a href="{% url 'account_login' %}" class=" text-light">Log In</a> to remark {{cocktail.title}} Cocktail!
@@ -91,7 +96,6 @@
                         </div>
                         {% for remark in remarks %}
                             <div class="card mt-5 rounded-0">
-
                                 <div class="card-body">
                                     <p class="small text-muted">{{ remark.user }} |  {{ remark.publish_date }}</p>
                                     <p class="card-text lead">{{ remark.text | linebreaks }}</p>
@@ -105,6 +109,4 @@
         </div>
     </div>
 </div>
-
-
 {% endblock %}

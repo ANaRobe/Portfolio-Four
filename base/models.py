@@ -25,6 +25,7 @@ class Cocktail(models.Model):
     publish_date = models.DateTimeField(auto_now=True)
     last_update = models.DateTimeField(auto_now=True)
 
+    """Main taste"""
     SWEET = 'sweet'
     BITTER = 'bitter'
     SOUR = 'sour'

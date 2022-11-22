@@ -3,13 +3,16 @@
 {% load static %}
 
 {% if user.is_authenticated %}
-<section>
-    <div class="row">
-        <div class="col-8 offset-2">
-        <h1 class="page-title text-center mt-5 mb-2">My Cocktails</h1> 
-        <hr>
-        </div>
+<!--Top Image-->
+<div class="pimg3">
+    <div class="ptext">
+        <span class="border trans">
+            My Cocktails
+        </span>
     </div>
+</div>
+<!--My Cocktails LIST-->
+<section>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mt-3 left">
@@ -53,11 +56,17 @@
         </div>
     </div>
 {% include "pagination.html" %}
-    <hr>
-    <img src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667053877/pexels-timur-weber-8679591_h0rw33.jpg" width="100%" alt="Cocktail"/>
-    <hr>
 </section>
 
+<!--Bottom Image-->
+<div class="pimg3">
+    <div class="ptext">
+        <span class="border trans">
+           Follow Us!
+        </span>
+    </div>
+</div>
+<hr>
 
 {% else %}
 
