@@ -1,108 +1,385 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Cocktail
+![alt text](/static/images/amiresponsive.PNG)
 
-Welcome ANaRobe,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Cocktail is a website dedicated to alcoholic and non alcoholic beverages mixes in the form of a blog post where users can interact. 
+When registered and logged in, users can comment, like and view recipes and also share their own cocktail recipes with others. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This website is designed to fulfill the full stack framework milestone project IV requirements of the Code Institute course, being built in Django using Python, JavaScript, CSS and HTML.
 
-## Gitpod Reminders
+View the live website on [Heroku](https://cocktail2022.herokuapp.com/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Note: To open any links in a new tab, press CTRL + Click
 
-`python3 -m http.server`
+---------------------------------------------------------------------------------------------------
 
-A blue button should appear to click: _Make Public_,
+## User Experience Design (UX)
 
-Another blue button should appear to click: _Open Browser_.
+### Strategy Plane
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+With the core UX principles in mind I started with the outline of the website by firstly identifying target audience and the needs of the enduser.
+In the brainstorming phase I focused on answering  questions like "What type of content/functionality is crucial on the website?", "What type of content/functionality would be nice, but not essential?".
+To create a comprehensive and appealing website I researched other recipe websites content and structure. 
+The overview of how the competition looks like allowed me decide what features and functionalities would be necesary for my own project. 
 
-A blue button should appear to click: _Make Public_,
+Next steps were whireframing the website's design and create the database scheme. Using the Agile principles, during development the database scheme and whireframes suffered modifications. Therefore, the ones you will find in the README.md file are the latest versions.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+*The typical user for the website would be someone who:*
 
-To log into the Heroku toolbelt CLI:
+- is most likely an adult passionate about mixing alkoholic and nonalkoholic drinks.
+- Is looking to expand their knowledge in this area
+- Is willing to share his/her own recipes 
+- Is willing to offer his/her tips and/or impressions to other users
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+*The users visiting the website are looking for:*
 
-------
+- A wide range of cocktail recipes from all around the world
+- Browse cocktail recipes
+- Interacting with the site content by creating a personal account
+- Storing all their recipes and access just the one they when they want to
+- Writing reviews for the cocktails they have made/tried 
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+*The SuperUser has to be able to:*
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- Approve cocktail recipe uploads and comments
+- Filter through recipes, comments, and users to ease control of the site
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+*Site Goals:*
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- To provide users a single place to find all the above 
+- To have  intuitive controls and layout
+- Wide compatibility with every Browsers and Devices.
+- Enables its users not only to read, but to create, edit and delete content
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+*Site Owner Goals:*
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- To provide the user with a professional web application
+- Connect people who are interested in cocktails
+- Inspire other people to have a colorful way enjoying their free time
+- To encourage users to register and activate their profile
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### EPICS & User Stories
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The **Agile** methodology was used to plan the project and [Github](), the tool to demonstrate it.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+*Projects* were used to divide the project into three iterations with a simple Kanban board.
+*Milestones* were used to create Epics with a custom template
+*Issues* were used to create User Stories with a custom template. Eash user story is clearly described with a title, statement, acceptance criteria and tasks.They were there not only to record User Stories but also used to FIX, UPDATE and record DOCUMENTATION updates as well.
+Each user story was linked to an Epic and placed within one of three Iterations. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+EPIC| ADMIN
 
-## FAQ about the uptime script
+As a site admin I can CRUD drafts of recipes so that I finish them later
+As a site admin I can CRUD recipes so that I can manage the data at any given time
+As a site admin I can manage user's comments so that I can I disaprove the ones breaking the website guidelines
+As a site admin I can CRUD reviews to cocktail posts so that I open conversations between the users 
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+EPIC | CONTENT DISPLAY
 
-**How will this affect me?**
+As a user I can view a paginated list of cocktails so that I can choose what I will mix
+As a user I can click on an item in the list so that I explore the entire cocktail recipe and its comments
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+EPIC | ACCOUNT
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+As a user I can make my own account so that I can CRUD myself cocktail recipes and reviews
+As a registered user I can login and logout of the site so that I can CRUD myself cocktail recipes and reviews
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Epic | LIKES & REVIEWS
 
-**Can I opt out?**
+As a user I can like/unlike posts so that I can share my preferance regarding certain cocktails
+As a logged-in user I can review a recipe so that I can interact with the other users
+As a logged-in user I can CRUD my own cocktail recipes and reviews so that I can be in charge of my content 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+Epic | BROWSING
 
-**Anything more?**
+As a logged-in user user I can search cocktails by title and ingredients so that I comfortably find the right one
+As a logged-in user I can see a paginated list of the cocktails I liked so that I keep track with my favourites
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+### Scope Plane
 
-Happy coding!
+A scope was defined to identify what needed to be done to align features with the strategy previously defined. Due to the imbalance of scores above, there will be some trade-offs. The was broken into these categories:
+
+Content Requirements
+
+The UX must address these:
+- A comprehensive list of recipes.
+- A comprehensive set of instructions with ingredients to follow.
+- A list of all comments made on a recipe.
+
+The UX should accommodate these:
+- Easy navigation of the site.
+- Ability to comment and like recipes.
+
+## Design
+
+The site employs a simple UI, with many standard UI components already familiar to the user and little to distract from the content itself.
+Wireframe sketches were drawn up in Balsamiq. These reflect basic layout considerations rather than aesthetics.
+
+### Logo
+The logo, which is situated on the Nav Bar was created in Paint and meant to have a minimalistic style. The logo also acts as a link to take the user back to the home page.
+
+
+### Color scheme
+
+The color scheme was chosen as it feels clean and stylish in order to match any style of  cocktail could be introduced to the users. At the same time, it is both visually unintimidating and easy on the eye. The button colors are consistent throughout the app to maintain consistency and increase the intuitiveness of the page.
+
+
+### Imagey
+
+The *Hero Image* has the purpose to greet the user and instantly provide the website's purpose, being static. 
+The rest of the images will be uploaded by various users.
+
+
+## Structure Plane
+
+### Logic Flow Chart
+
+![alt text](/static/images/website-map.PNG)
+
+### Wireframes
+
+Site moc-ups were designed using Balsamiq wireframes. The focus was on defining the basic layout structure of the app and identifying how displays would change on different screen sizes such as mobile, tablet and larger screens.
+ 
+
+#### Desktop
+
+- [Home Page](/static/images/whire-home.PNG)
+
+- [Cocktail Detail](/static/images/whire-cocktail.PNG)
+
+- [My Cocktails](/static/images/whire-mobile-mycocktails.PNG)
+
+- [My Favourites](/static/images/whire-favourites.PNG)
+
+- [Searched Cocktail](https://balsamiq.cloud/s3pzm93/pvfw80q/r61AA/bE3DE)
+
+- [Sign Up](/static/images/whire-signup.PNG)
+
+- [Log In](/static/images/whire-login.PNG)
+
+- [Log Out](/static/images/whire-logout.PNG)
+
+##### Mobile
+
+- [Home Page](/static/images/whire-mobile-home.PNG)
+
+- [Cocktail Detail](/static/images/whire-mobile-cocktail.PNG)
+
+- [My Cocktails](/static/images/whire-mobile-mycocktails.PNG)
+
+- [My Favourites](/static/images/whire-mobile-myfavourites.PNG)
+
+- [Sign Up](/static/images/whire-mobile-signup.PNG)
+
+- [Log In](/static/images/whire-mobile-login.PNG)
+
+- [Log Out](/static/images/whire-mobile-logout.PNG)
+
+---------------------------------------------------------------------------------
+## Information Architecture
+
+### Database Models
+
+![alt text](/static/images/data-scheme.PNG)
+
+-----------------------------------------------------------------------------------
+### Features
+
+* Existing Features
+
+
+*Logo* 
+
+ * Displayed on every page for easy navigation, the user can click it to go back to the home page. 
+
+![alt text](https://res.cloudinary.com/dyjmpid6t/image/upload/v1667035117/logo_xou93d.png)
+
+
+*Nav-Bar* 
+
+* Displayed on every page for consistency and easy navigation through the site map.
+
+![alt text](/static/images/navbar.PNG)
+
+
+*Search Form*
+
+* The user can search through the database by the cocktail's name or by ingredients.
+
+![alt text](/static/images/search.PNG)
+
+
+*Footer*
+
+* Placed at the bottom of each page, displayes icons to social media accounts. By clicking them, a new separate page will open in order not to interfere with the actual website surfing.
+
+![alt text](/static/images/footer.PNG)
+
+
+*Cards* 
+
+* paginated by six,they hold information of the cocktail recipe title, likes and an image. When an image was not uploaded by the user who posted a certain cocktail recipe, a placeholder image will be displayed on the card.
+
+![alt text](/static/images/card.png)
+
+*Add Button*
+
+* A call to action button is clearly visible to the logged in user to 'Add Cocktail' and open a new Form recipe with just one click.
+
+![alt text](/static/images/add-cocktail.PNG)
+
+
+*Recipe Form*
+
+* Users who holds an account and are logged in can access the Form and edit/delete their own recipes by manipulating information in all the fields.
+
+![alt text](/static/images/form.PNG)
+
+![alt text](/static/images/save-delete.PNG)
+
+
+*Remark Form* 
+
+* It can be found underneath each cocktail recipe when fully displayed. Logged in users can comment recipes, and also delete their own comments.
+
+![alt text](/static/images/remark-form.PNG)
+
+
+*Remarks Section* 
+
+* All users can read all comments, the author and the date when was commented.
+
+![alt text](/static/images/remarks.PNG)
+
+
+*Like/Unlike Button*
+
+* Accompanies each cocktail recipe. Only logged in users can like/unlike. But the number of likes are  displayed for all users to see.
+
+![alt text](/static/images/like.png)
+
+
+*Detailed Section* 
+
+* Displayed when clicked on a card. Here all users (logged in or not), can view details about the cocktail. 
+* This page also includes features to like and comment if you are a logged in user. 
+* Only the author of a post can be redirected from this section to edit/delete his/her cocktail recipe.
+
+![alt text](/static/images/cocktail-detail.PNG)
+
+
+*Edit/Delete Options*
+
+ * Only the author of the recipe can visualise the Edit button and update and/or delete their own recipes.
+
+ ![alt text](/static/images/edit.PNG)
+
+
+*Sign Up Section*
+
+When wanting to register the user can make use of this formular providing a required username and password (optional email address).
+
+![alt text](/static/images/signup.PNG)
+
+
+*Log In/ Log Out Section* 
+
+The login / out section is used to login / out users with an existing account.
+A message will appear once a user successfully logsin / out accordingly to the action.
+![alt text](/static/images/login.PNG)
+
+![alt text](/static/images/logout.PNG)
+
+-----------------------------------------------------------------------------
+
+## Technologies Employed
+
+### IDE
+* Gitpod
+
+### Languages
+* Python
+* HTML
+* CSS
+* JavaScript
+
+### Frameworks, Templates & Libraries
+* Django
+* Bootstrap
+* Font Awesome
+* Google Fonts
+
+### Storage & Hosting
+* Heroku
+* Github
+* Cloudinary
+
+### Databases
+SQLite3 for development
+PostgresSQL for the deployed site
+
+### Other Tools
+
+Google Dev Tools (including Lighthouse)
+Pep8online.com (to check Python code for PEP 8 requirements)
+W3C Validator (to check validity of HTML and CSS)
+JSHint.com (to check JavaScript)
+dbdiagram.io (to produce the MongoDB ERD)
+
+
+### Django and Heroku
+* To get the Django framework installed and set up I followed the Code Institute's Django Blog [Cheatsheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+
+## Credits
+
+### Content
+
+Most recipes created on this site were taken from [Barschool](https://www.barschool.net/blog/cocktails-101-history-and-types).
+
+### Media
+Most images that were used on the site were taken from [Pexels](https://www.pexels.com/royalty-free-images/) and [Unsplash](https://unsplash.com/s/photos/cocktails)
+### Code
+References used:
+
+* Stack Overflow
+* Django Documentation
+* Bootstrap Documentation
+* Summernote GitHub Docs
+
+Projects of other fellow colleagues which inspired this website:
+* https://github.com/Iris-Smok/The-Healthy-Family-PP4
+* https://github.com/sherryrich/heard-it
+* https://github.com/Delboy/EatMe
+* https://github.com/siobhanlgorman/favoureats
+* https://github.com/CluelessBiker/project4
+* https://github.com/KarinOldbring/vegan-a-eat
+* https://github.com/Sharpryan20/food-twisters
+
+-----------------------------------------------------------------------------
+
+## Acknowledgements
+
+ For inpiration in general, for code and advice, I'd like to give thanks to:
+
+* Martina Terlevic
+
+* Kasia Bogucka
+
+### Sources
+
+Code Institute student template for Gitpod, where all of the toolsto get started were preinstalled.
+
