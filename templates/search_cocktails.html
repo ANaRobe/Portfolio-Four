@@ -18,9 +18,9 @@
                             <a href="{% url 'cocktail' cocktail.slug %}" class="text-decoration-none text-muted ">
                                 <div class="card-body">
                                     {% if "placeholder" in cocktail.image.url %}
-                                    <img class="card-img-top img-fit" height="300px" src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667111171/static/images/logo_xlknhs.png">
+                                    <img class="card-img-top img-fit" height="300" src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667111171/static/images/logo_xlknhs.png" alt="Cocktail Logo placeholder">
                                     {% else %}
-                                    <img class="card-img-top img-fit" height="300empx" src=" {{ cocktail.image.url }}" alt="{{ cocktail.title }}">
+                                    <img class="card-img-top img-fit" height="300" src=" {{ cocktail.image.url }}" alt="{{ cocktail.title }}">
                                     {% endif %}
                                     <h2 class="card-title ">{{ cocktail.title }}</h2>
                                     <hr />

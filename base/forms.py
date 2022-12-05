@@ -4,6 +4,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field, HTML, Submit, Button
 from django.utils.text import slugify
 
+
 # Create Update Delete Cocktail
 class CocktailForm(ModelForm):
 
@@ -18,9 +19,7 @@ class CocktailForm(ModelForm):
             HTML('<h2 class="page-title text-center mt-5 mb-2">Manage the Recipe of your Cocktail </h2><hr><br>'),
         )
 
-
         for field in self.Meta().fields:
-
             helper.layout.append(Field(field, wrapper_class='row'))
 
         try:

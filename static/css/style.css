@@ -74,7 +74,7 @@ body, html{
 }
 
 
-@media(max-width:568){
+@media(max-width:5680){
     .pimg1, .pimg2, .pimg3, .pimg4{
         background-attachment: scroll;
     }

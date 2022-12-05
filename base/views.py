@@ -37,7 +37,7 @@ class CocktailDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Cocktail.objects.filter(status=1)
         cocktail = get_object_or_404(queryset, slug=slug)
-        remarks = cocktail.remarks.order_by("publish_date")
+        remarks = cocktail.remarks.order_by("-publish_date")
         liked = False
         if cocktail.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -146,7 +146,7 @@ class UsersFavCocktails(LoginRequiredMixin, View):
 
 
 class UsersCocktails(LoginRequiredMixin, ListView):
-    
+
     def get(self, request):
 
         if request.user.is_authenticated:

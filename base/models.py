@@ -78,4 +78,3 @@ class Remark(models.Model):
 
     def __str__(self):
         return f"Comment{self.text} by {self.user}"
-
