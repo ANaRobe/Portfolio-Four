@@ -34,11 +34,12 @@
 <hr>
 <!--Explore Section-->
 <section class="section section-dark">
-    <p>If you're looking to get a little adventurous with your ordinary alcoholic beverages, then these experimental DIY cocktails will definitely add a kick to any late night gathering.
+    
+    <h6>If you're looking to get a little adventurous with your ordinary alcoholic beverages, then these experimental DIY cocktails will definitely add a kick to any late night gathering.
 
         While bars and dining establishments often feature brand name drinks and cocktails, finding beverages that are tailored and customized to your preferred taste is almost impossible. That's why making drinks at home with exotic and creative ingredients is a fun and entertaining way to put a personal twist on go-to alcoholic beverages. From beverages that incorporate floral flavoring to those that feature unexpected ingredients like yogurt and hot sauce, these DIY cocktails will definitely make staying in a lot more enticing.
         
-        Showcasing how a little creativity can instantly revamp a traditional drink, these experimental beverages will certainly be the highlight of any social gathering.</p>
+        Showcasing how a little creativity can instantly revamp a traditional drink, these experimental beverages will certainly be the highlight of any social gathering.</h6>
 </section>
 <hr>
 <!--Cocktails LIST-->
@@ -52,9 +53,9 @@
                         <a href="{% url 'cocktail' cocktail.slug %}" class="text-decoration-none text-muted ">
                             <div class="card-body hover">
                                 {% if "placeholder" in cocktail.image.url %}
-                                <img class="card-img-top img-fit" height="300" src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667111171/static/images/logo_xlknhs.png" alt="Cocktail Logo placeholder">
+                                <img class="card-img-top img-fit" height="300" width="200" src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667111171/static/images/logo_xlknhs.png" alt="Cocktail Logo placeholder">
                                 {% else %}
-                                <img class="card-img-top img-fit" height="300" src=" {{ cocktail.image.url }}" alt="{{ cocktail.title }}">
+                                <img class="card-img-top img-fit" height="300" width="200" src=" {{ cocktail.image.url }}" alt="{{ cocktail.title }}">
                                 {% endif %}
                                 {% if cocktail.alcoholic %}
                                 <em>Cocktail</em>
@@ -62,7 +63,7 @@
                                 <em>Mocktail</em>
                                 {% endif%}  
                                 <h2 class="card-title ">{{ cocktail.title }}</h2>
-                                <hr />
+                                <hr>
                                 <p class="card-text h6">{{ cocktail.number_of_likes }} <i class="fa-solid fa-heart"></i></p>
                             </div>
                         </a>

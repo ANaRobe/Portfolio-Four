@@ -1,5 +1,5 @@
 # Cocktail
-![alt text](/static/images/amiresponsive.PNG)
+![alt text](documentation/images/amiresponsive.PNG)
 
 
 Cocktail is a website dedicated to alcoholic and non alcoholic beverages mixes in the form of a blog post where users can interact. 
@@ -67,13 +67,24 @@ Next steps were whireframing the website's design and create the database scheme
 
 ### EPICS & User Stories
 
-The **Agile** methodology was used to plan the project and [Github](), the tool to demonstrate it.
+The **Agile** methodology was used to plan the project and [Github](https://github.com), the tool to demonstrate it.
+The Project Kanban Board can be seen here -  <a href="https://github.com/users/ANaRobe/projects/8/views/1?layout=board" target="_blank"> Cocktail Project </a>
+
+Through the use of the Kanban board in the projects view in Github, the project was divived into a few different sections:
+* To Do
+* In Progress
+* Done
+
+![Kanban board github - View](documentation/images/Kanban.PNG)
+![Table View github -View](documentation/images/Kanban.PNG)
 
 *Projects* were used to divide the project into three iterations with a simple Kanban board.
 *Milestones* were used to create Epics with a custom template
 *Issues* were used to create User Stories with a custom template. Eash user story is clearly described with a title, statement, acceptance criteria and tasks.They were there not only to record User Stories but also used to FIX, UPDATE and record DOCUMENTATION updates as well.
 Each user story was linked to an Epic and placed within one of three Iterations. 
 
+As it can be notice, one story remained undone. According with the Agile principles, during development I have found myself in the position to try to implement a functionality that would not serve the user experience, morover would interrupt the flowof user interraction if the approval would have been at hte end implemented. Therefore, this ticket will be in stand by.
+Until other automated  method will be chosen, the admin will have to delete the content which breakes the website's guidelines.
 
 
 EPIC| ADMIN
@@ -148,7 +159,7 @@ The rest of the images will be uploaded by various users.
 
 ### Logic Flow Chart
 
-![alt text](/static/images/website-map.PNG)
+![alt text](documentation/images/website-map.PNG)
 
 ### Wireframes
 
@@ -157,44 +168,44 @@ Site moc-ups were designed using Balsamiq wireframes. The focus was on defining 
 
 #### Desktop
 
-- [Home Page](/static/images/whire-home.PNG)
+- [Home Page](documentation/images/whire-home.PNG)
 
-- [Cocktail Detail](/static/images/whire-cocktail.PNG)
+- [Cocktail Detail](documentation/images/whire-cocktail.PNG)
 
-- [My Cocktails](/static/images/whire-mobile-mycocktails.PNG)
+- [My Cocktails](documentation/images/whire-mobile-mycocktails.PNG)
 
-- [My Favourites](/static/images/whire-favourites.PNG)
+- [My Favourites](documentation/images/whire-favourites.PNG)
 
 - [Searched Cocktail](https://balsamiq.cloud/s3pzm93/pvfw80q/r61AA/bE3DE)
 
-- [Sign Up](/static/images/whire-signup.PNG)
+- [Sign Up](documentation/images/whire-signup.PNG)
 
-- [Log In](/static/images/whire-login.PNG)
+- [Log In](documentation/images/whire-login.PNG)
 
-- [Log Out](/static/images/whire-logout.PNG)
+- [Log Out](documentation/images/whire-logout.PNG)
 
 ##### Mobile
 
-- [Home Page](/static/images/whire-mobile-home.PNG)
+- [Home Page](documentation/images/whire-mobile-home.PNG)
 
-- [Cocktail Detail](/static/images/whire-mobile-cocktail.PNG)
+- [Cocktail Detail](documentation/images/whire-mobile-cocktail.PNG)
 
-- [My Cocktails](/static/images/whire-mobile-mycocktails.PNG)
+- [My Cocktails](documentation/images/whire-mobile-mycocktails.PNG)
 
-- [My Favourites](/static/images/whire-mobile-myfavourites.PNG)
+- [My Favourites](documentation/images/whire-mobile-myfavourites.PNG)
 
-- [Sign Up](/static/images/whire-mobile-signup.PNG)
+- [Sign Up](documentation/images/whire-mobile-signup.PNG)
 
-- [Log In](/static/images/whire-mobile-login.PNG)
+- [Log In](documentation/images/whire-mobile-login.PNG)
 
-- [Log Out](/static/images/whire-mobile-logout.PNG)
+- [Log Out](documentation/images/whire-mobile-logout.PNG)
 
 ---------------------------------------------------------------------------------
 ## Information Architecture
 
 ### Database Models
 
-![alt text](/static/images/data-scheme.PNG)
+![alt text](documentation/images/data-scheme.PNG)
 
 -----------------------------------------------------------------------------------
 ### Features
@@ -213,64 +224,64 @@ Site moc-ups were designed using Balsamiq wireframes. The focus was on defining 
 
 * Displayed on every page for consistency and easy navigation through the site map.
 
-![alt text](/static/images/navbar.PNG)
+![alt text](documentation/images/navbar.PNG)
 
 
 *Search Form*
 
 * The user can search through the database by the cocktail's name or by ingredients.
 
-![alt text](/static/images/search.PNG)
+![alt text](documentation/images/search.PNG)
 
 
 *Footer*
 
 * Placed at the bottom of each page, displayes icons to social media accounts. By clicking them, a new separate page will open in order not to interfere with the actual website surfing.
 
-![alt text](/static/images/footer.PNG)
+![alt text](documentation/images/footer.PNG)
 
 
 *Cards* 
 
 * paginated by six,they hold information of the cocktail recipe title, likes and an image. When an image was not uploaded by the user who posted a certain cocktail recipe, a placeholder image will be displayed on the card.
 
-![alt text](/static/images/card.png)
+![alt text](documentation/images/card.png)
 
 *Add Button*
 
 * A call to action button is clearly visible to the logged in user to 'Add Cocktail' and open a new Form recipe with just one click.
 
-![alt text](/static/images/add-cocktail.PNG)
+![alt text](documentation/images/add-cocktail.PNG)
 
 
 *Recipe Form*
 
 * Users who holds an account and are logged in can access the Form and edit/delete their own recipes by manipulating information in all the fields.
 
-![alt text](/static/images/form.PNG)
+![alt text](documentation/images/form.PNG)
 
-![alt text](/static/images/save-delete.PNG)
+![alt text](documentation/images/save-delete.PNG)
 
 
 *Remark Form* 
 
 * It can be found underneath each cocktail recipe when fully displayed. Logged in users can comment recipes, and also delete their own comments.
 
-![alt text](/static/images/remark-form.PNG)
+![alt text](documentation/images/remark-form.PNG)
 
 
 *Remarks Section* 
 
 * All users can read all comments, the author and the date when was commented.
 
-![alt text](/static/images/remarks.PNG)
+![alt text](documentation/images/remarks.PNG)
 
 
 *Like/Unlike Button*
 
 * Accompanies each cocktail recipe. Only logged in users can like/unlike. But the number of likes are  displayed for all users to see.
 
-![alt text](/static/images/like.png)
+![alt text](documentation/images/like.png)
 
 
 *Detailed Section* 
@@ -279,30 +290,30 @@ Site moc-ups were designed using Balsamiq wireframes. The focus was on defining 
 * This page also includes features to like and comment if you are a logged in user. 
 * Only the author of a post can be redirected from this section to edit/delete his/her cocktail recipe.
 
-![alt text](/static/images/cocktail-detail.PNG)
+![alt text](documentation/images/cocktail-detail.PNG)
 
 
 *Edit/Delete Options*
 
  * Only the author of the recipe can visualise the Edit button and update and/or delete their own recipes.
 
- ![alt text](/static/images/edit.PNG)
+ ![alt text](documentation/images/edit.PNG)
 
 
 *Sign Up Section*
 
 When wanting to register the user can make use of this formular providing a required username and password (optional email address).
 
-![alt text](/static/images/signup.PNG)
+![alt text](documentation/images/signup.PNG)
 
 
 *Log In/ Log Out Section* 
 
 The login / out section is used to login / out users with an existing account.
 A message will appear once a user successfully logsin / out accordingly to the action.
-![alt text](/static/images/login.PNG)
+![alt text](documentation/images/login.PNG)
 
-![alt text](/static/images/logout.PNG)
+![alt text](documentation/images/logout.PNG)
 
 -----------------------------------------------------------------------------
 
@@ -340,9 +351,137 @@ W3C Validator (to check validity of HTML and CSS)
 JSHint.com (to check JavaScript)
 dbdiagram.io (to produce the MongoDB ERD)
 
+# Testing
+
+I have included testing details in a separate document called [TESTING.md](TESTING.md)
+
 
 ### Django and Heroku
 * To get the Django framework installed and set up I followed the Code Institute's Django Blog [Cheatsheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+
+# Deployment
+
+## Deployment to Heroku
+
+### 1. Creating the Django Project
+* If development if being done locally: Activate your virtual environment
+* To ensure the virtual environment is not tracked by version control, add .venv to the .gitignore file.
+* Install Django and gunicorn: `pip install django gunicorn`
+* Install supporting database libraries dj_database_url and psycopg2 library: `pip install dj_database_url psycopg2`
+* Install Cloudinary libraries to manage static files: `pip install dj-3-cloudinary-storage`
+* Create file for requirements: `pip freeze --local > requirements.txt`
+* Create project:`django-admin startproject project_name .`
+* Create app: `python manage.py startapp app_name`
+* Add app to list of `installed apps` in settings.py file: `'app_name'`
+* Migrate changes: `python manage.py migrate`
+* Test server works locally: `python manage.py runserver`
+
+### 2. Create your Heroku app
+* Navigate to the Heroku website
+* Create a Heroku account by entering your email address and a password (or login if you have one already).
+* Activate the account through the authentication email sent to your email account
+* Click the **new button** on the top right corner of the screen and select create a new app from the dropdown menu.
+* Enter a unique name for the application.
+* Select the appropriate region for the application.
+* Click create app
+* In the Heroku dashboard click on the Resources tab
+* Scroll down to Add-Ons, search for and select 'Heroku Postgres'
+* In the Settings tab, scroll down to 'Reveal Config Vars' and copy the text in the box beside DATABASE_URL.
+
+From November 28th 2022, Heroku will longer support free databases, therefore migrating the database to ElephantSQL was necesary.
+* For this purpose was used this [Cheatsheet](https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/) provided by Code Institute.
+* In this process Converting the app to Heroku eco-dynos was also needed. The steps can be found in this [Cheatsheet](https://code-institute-students.github.io/deployment-docs/01-heroku-signup/heroku-03-converting-dynos) provided by Code Institute.
+
+### 3. Set up Environment Variables
+* In you IDE create a new env.py file in the top level directory
+* Add env.py to the .gitignore file
+* In env.py import the os library
+* In env.py add `os.environ["DATABASE_URL"]` = "Paste in the text link copied above from Heroku DATABASE_URL"
+* In env.py add `os.environ["SECRET_KEY"] = "Make up your own random secret key"`
+* In Heroku Settings tab Config Vars enter the same secret key created in env.py by entering 'SECRET_KEY' in the box for 'KEY' and your randomly created secret key in the 'value' box.
+
+### 4. Setting up settings.py
+
+* In your Django 'settings.py' file type:
+
+ ```
+ from pathlib import Path
+ import os
+ import dj_database_url
+
+ if os.path.isfile("env.py"):
+  import env
+ ```
+* Remove the default insecure secret key in settings.py and replace with the link to the secret key variable in Heroku by typing: `SECRET_KEY = os.environ.get(SECRET_KEY)`
+* Comment out the `DATABASES` section in settings.py and replace with:
+```
+DATABASES = {
+  'default': 
+  dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  }`
+```
+* Create a Cloudinary account and from the 'Dashboard' in Cloudinary copy your url into the env.py file by typing: `os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"`
+* In Heroku  add cloudinary url to 'config vars'
+* In Heroku config vars add DISABLE_COLLECTSTATIC with value of '1' (note: this must be removed for final deployment)
+* Add Cloudinary libraries to the installed apps section of settings.py file:
+ ```
+ 'cloudinary_storage'
+ 'django.contrib.staticfiles''
+ 'cloudinary'
+ ```
+* Connect Cloudinary to the Django app in `settings.py`:
+```
+STATIC_URL = '/static'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'STATIC')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE =
+'cloudinary_storage.storage.MediaCloudinaryStorage'
+* Link file to the templates directory in Heroku 
+* Place under the BASE_DIR: TEMPLATES_DIR = os.path.join(BASE_DIR,
+'templates')
+```
+* Change the templates directory to TEMPLATES_DIR. Place within the TEMPLATES array: `'DIRS': [TEMPLATES_DIR]`
+* Add Heroku Hostname to ALLOWED_HOSTS: ```ALLOWED_HOSTS =
+['rhi-book-nook.herokuapp.com', 'localhost']```
+*Create Procfile at the top level of the file structure and insert the following:
+    ``` web: gunicorn PROJECT_NAME.wsgi ```
+
+* Make an initial commit and push the code to the GitHub Repository.
+    ```git add .```
+    ```git commit -m "Initial deployment"```
+    ```git push```
+
+### 5. Heroku Deployment: 
+* Click Deploy tab in Heroku
+* In the 'Deployment method' section select 'Github' and click the 'connect to Github' button to confirm.
+* In the 'search' box enter the Github repository name for the project
+* Click search and then click connect to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository.
+
+### 6. Final Deployment
+In the IDE: 
+* When development is complete change the debug setting to: `DEBUG = False` in `settings.py` 
+* In Heroku settings config vars change the DISABLE_COLLECTSTATIC value to 0
+* Because DEBUG must be switched to True for development and False for production it is recommended that only manual deployment is used in Heroku. 
+* To manually deploy click the button 'Deploy Branch'. The default 'main' option in the dropdown menu should be selected in both cases. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
+
+## To fork the repository on GitHub
+
+A copy of the GitHub Repository can be made by forking the GitHub account. Changes can be made on this copy without affecting the original repository.
+
+1. Log in to GitHub and locate the repository in question.
+2. Locate the Fork button which can be found in the top corner, right-hand side of the page, inline with the repository name.
+3. Click this button to create a copy of the original repository in your GitHub Account.
+
+## To clone the repository on GitHub
+
+1. Click on the code button which is underneath the main tab and repository name to the right.
+2. In the 'Clone with HTTPS' section, click on the clipboard icon to copy the URL.
+3. Open Git Bash in your IDE of choice.
+4. Change the current working directory to where you want the cloned directory to be made.
+5. Type git clone, and then paste the URL copied from GitHub.
+6. Press enter and the clone of your repository will be created.
 
 ## Credits
 
@@ -352,6 +491,7 @@ Most recipes created on this site were taken from [Barschool](https://www.barsch
 
 ### Media
 Most images that were used on the site were taken from [Pexels](https://www.pexels.com/royalty-free-images/) and [Unsplash](https://unsplash.com/s/photos/cocktails)
+
 ### Code
 References used:
 
@@ -361,6 +501,7 @@ References used:
 * Summernote GitHub Docs
 
 Projects of other fellow colleagues which inspired this website:
+
 * https://github.com/Iris-Smok/The-Healthy-Family-PP4
 * https://github.com/sherryrich/heard-it
 * https://github.com/Delboy/EatMe

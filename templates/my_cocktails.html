@@ -22,7 +22,7 @@
                         <a href="{% url 'cocktail' cocktail.slug %}" class="text-decoration-none text-muted ">
                             <div class="card-body hover">
                                 {% if "placeholder" in cocktail.image.url %}
-                                <img class="card-img-top img-fit" height="300px"
+                                <img class="card-img-top img-fit" height="300"
                                     src="https://res.cloudinary.com/dyjmpid6t/image/upload/v1667111171/static/images/logo_xlknhs.png" alt="Cocktail Logo placeholder">
                                 {% else %}      
                                 <img class="card-img-top img-fit" height="300px" src=" {{ cocktail.image.url }}" alt="{{ cocktail.title }}">
@@ -32,7 +32,7 @@
                                 <em>Mocktail</em>
                                 {% endif%}                                     {% endif %} 
                                 <h2 class="card-title text-muted">{{ cocktail.title }}</h2>
-                                <hr />
+                                <hr>
                                 <p class="card-text h6">{{ cocktail.number_of_likes }} <i class="fa-solid fa-heart"></i></p>
                             </div>
                         </a>
@@ -45,7 +45,7 @@
                     <div class="container log-box">
                         <div class="row justify-content-md-center">
                             <div class="col-md-12 mt-4">
-                                <p class="lead text-center">It looks like you haven't shared any cocktail recpipes yet!
+                                <p class="lead text-center">It looks like you haven't shared any cocktail recipes yet!
                                 </p>
                             </div>
                         </div>
