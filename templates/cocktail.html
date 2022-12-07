@@ -98,7 +98,7 @@
                             <div class="card mt-5 rounded-0">
                                 <div class="card-body">
                                     <p class="small text-muted">{{ remark.user }} |  {{ remark.publish_date }}</p>
-                                    <p class="card-text lead">{{ remark.text | linebreaks }}</p>
+                                    <p class="card-text lead">{{ remark.text | linebreaks }} <!--left the open paragraph so at the end will not be doubled-->
                                 </div>
                             </div>
                         {% endfor %}
