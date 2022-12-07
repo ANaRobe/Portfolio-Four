@@ -27,7 +27,7 @@ def search_cocktails(request):
 class CocktailsList(ListView):
     context_object_name = "cocktails"
     model = Cocktail
-    queryset = Cocktail.objects.filter(status=1).order_by("-publish_date")
+    queryset = Cocktail.objects.order_by("-publish_date")
     template_name = "index.html"
     paginate_by = 6
 
@@ -35,7 +35,7 @@ class CocktailsList(ListView):
 class CocktailDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Cocktail.objects.filter(status=1)
+        queryset = Cocktail.objects
         cocktail = get_object_or_404(queryset, slug=slug)
         remarks = cocktail.remarks.order_by("-publish_date")
         liked = False
@@ -54,7 +54,7 @@ class CocktailDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        queryset = Cocktail.objects.filter(status=1)
+        queryset = Cocktail.objects
         cocktail = get_object_or_404(queryset, slug=slug)
         remarks = cocktail.remarks.order_by("publish_date")
         liked = False
@@ -99,7 +99,7 @@ class CocktailCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 class CocktailEdit(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     template_name = 'edit.html'
     form_class = CocktailForm
-    queryset = Cocktail.objects.filter(status=1)
+    queryset = Cocktail.objects
     success_message = 'Successfully Updated Cocktail'
 
     def test_func(self):
@@ -110,7 +110,7 @@ class CocktailEdit(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin,
 class CocktailDelete(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = Cocktail
     template_name = 'cocktail_confirm_delete.html'
-    queryset = Cocktail.objects.filter(status=1)
+    queryset = Cocktail.objects
     success_url = reverse_lazy('home')
     success_message = 'Successfully Removed Cocktail'
 

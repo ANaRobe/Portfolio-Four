@@ -8,9 +8,9 @@ from django_summernote.admin import SummernoteModelAdmin
 class CocktailAdmin(SummernoteModelAdmin):
 
     prepopulated_fields = {'slug': ('title', )}
-    list_filter = ('status', 'publish_date')
+    list_filter = ('publish_date', )
     summernote_fields = ('ingredients', 'steps')
-    list_display = ('title', 'slug', 'status', 'publish_date')
+    list_display = ('title', 'slug', 'publish_date')
     search_fields = ['title', 'ingredients']
 
 

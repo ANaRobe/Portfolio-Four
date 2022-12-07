@@ -149,7 +149,7 @@ There were instances when the performance droped under 80% and I have tried to f
 
 #### **Mobile**
 
-![Cocktail Page Mobile Lighthoue Validation](documentation/images/testing/)
+![Cocktail Page Mobile Lighthoue Validation](documentation/images/testing/lighthouse_mobile_cocktail.PNG)
 
 ### My Cocktails Page
 

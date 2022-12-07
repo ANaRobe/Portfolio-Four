@@ -7,7 +7,6 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.urls import reverse
 from django.utils.text import slugify
 
-STATUS = ((0, 'Draft'), (1, 'Published'))
 
 
 class Cocktail(models.Model):
@@ -21,7 +20,6 @@ class Cocktail(models.Model):
     ingredients = models.TextField(null=False, blank=False)
     steps = models.TextField(null=False, blank=False)
     mixing_time = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(60)])
-    status = models.IntegerField(choices=STATUS, default=1)
     publish_date = models.DateTimeField(auto_now=True)
     last_update = models.DateTimeField(auto_now=True)
 

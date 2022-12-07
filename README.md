@@ -83,8 +83,8 @@ Through the use of the Kanban board in the projects view in Github, the project 
 *Issues* were used to create User Stories with a custom template. Eash user story is clearly described with a title, statement, acceptance criteria and tasks.They were there not only to record User Stories but also used to FIX, UPDATE and record DOCUMENTATION updates as well.
 Each user story was linked to an Epic and placed within one of three Iterations. 
 
-As it can be notice, one story remained undone. According with the Agile principles, during development I have found myself in the position to try to implement a functionality that would not serve the user experience, morover would interrupt the flowof user interraction if the approval would have been at hte end implemented. Therefore, this ticket will be in stand by.
-Until other automated  method will be chosen, the admin will have to delete the content which breakes the website's guidelines.
+As it can be notice, two stories remained undone. According with the Agile principles, during development I have found myself in the position to try to implement a functionality that would not serve the user experience as I expected. Morover it would interrupt the flow of user interraction if the approval would have been at the end implemented. Therefore, the tickets will remain in stand by till othe decision will be made.
+Until other automated  method will be chosen, the admin will have to manualy delete the content which breakes the website's guidelines.
 
 
 EPIC| ADMIN
