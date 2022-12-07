@@ -9,23 +9,23 @@ body, html{
 
 /* Index Page */
 .pimg1{
-    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1670253953/pexels-denys-gromov-12645208_akwwui_ixl3vx.jpg");
+    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1670253953/pexels-denys-gromov-12645208_akwwui_ixl3vx.webp");
     min-height: 100%;
 }
 .pimg2{
-    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1667053877/pexels-timur-weber-8679591_h0rw33.jpg");
+    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1667053877/pexels-timur-weber-8679591_h0rw33.webp");
     min-height: 400px;
 }
 
 /* My Cocktails Page*/
 .pimg3{
-    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1669127133/pexels-olena-bohovyk-3604314_vjso1l_3_bqkxnr.jpg");
+    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1669127133/pexels-olena-bohovyk-3604314_vjso1l_3_bqkxnr.webp");
     min-height: 400px;
 }
 
 /* Favourites Page*/
 .pimg4{
-    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1669072009/pexels-rebecca-5566052_dxw3gj.jpg");
+    background-image: url("https://res.cloudinary.com/dyjmpid6t/image/upload/v1669072009/pexels-rebecca-5566052_dxw3gj.webp");
     min-height: 400px;
 }
 
