@@ -6,39 +6,41 @@
 
 Html validation was done with [https://validator.w3.org/nu/](https://validator.w3.org/nu/). 
 
-
-#### **Home Page**
-![Home Page Html Validation](documentation/images/testing)
-
 </details>
 <br>
 
-#### **Add/Edit Cocktail Page**
-![Add Cocktail Html Validation](documentation/images/testing)
+#### **Home Page**
+![Home Page Html Validation](documentation/images/testing/w3_home_page.PNG)
+
+#### **Add Cocktail Page**
+![Add Cocktail Html Validation](documentation/images/testing/w3_add_cocktail.PNG)
+
+#### **Edit Cocktail Page**
+![Edit Cocktail Html Validation](documentation/images/testing/w3_edit.PNG)
 
 
 #### **Log In Page**
-![Log In Html Validation](documentation/images/testing)
+![Log In Html Validation](documentation/images/testing/w3_login.PNG)
 
 
 #### **Log Out Page**
-![Log Out Html Validation](documentation/images/testing)
+![Log Out Html Validation](documentation/images/testing/w3_logout.PNG)
 
 
 #### **Sign Up Page**
-![Sign Up Html Validation](documentation/images/testing)
+![Sign Up Html Validation](documentation/images/testing/w3_signup.PNG)
 
 
 #### **Favourites**
 
 Source code input tested
 
-![Favourites Html Validation](documentation/images/testing)
+![Favourites Html Validation](documentation/images/testing/w3_favourites.PNG)
 
 
 #### **Cocktail Page**
 
-![Cocktail page Html Validation](documentation/images/testing)
+![Cocktail page Html Validation](documentation/images/testing/w3_cocktail.PNG)
 
 </details>
 <br>
@@ -52,14 +54,6 @@ Source code input tested
 </details>
 <br>
 
-#### **Admin Page**
-
-Source code input tested
-
-![Admin Html Validation](documentation/images/testing)
-
-</details>
-<br>
 
 
 ### CSS Validation
@@ -103,67 +97,69 @@ One warning of unused variable cropped up, however this variable is called elsew
 
 ## Lighthouse Testing
 
-All pages were checked on lighthouse with the results between 80% and 100% for each page on mobile and desktop. Accessibility was impacted on a few pages. Similarly to the issues with html validation above, the accessibility issues are related to the django-heart-likes package installed.
+All pages were checked on lighthouse with the results between 80% and 100% for each page on mobile and desktop.
+Accessibility was impacted on a few pages. 
+There were instances when the performance droped under 80% and I have tried to fix the issue by installing a CDN but that solution failed. This issue will remain to be fixed in the future.
 
 ### Home Page
 
 #### **Desktop**
 
-![Home Page Desktop Lighthoue Validation](documentation/images/testing)
+![Home Page Desktop Lighthoue Validation](documentation/images/testing/lighthouse_desktop_home.PNG)
 
 #### **Mobile**
 
-![Home Page Mobile Lighthoue Validation](documentation/images/testing)
+![Home Page Mobile Lighthoue Validation](documentation/images/testing/lighthouse_mobile_home.PNG)
 
 ### Favourites Page
 
 #### **Desktop**
 
-![Favourites Page Desktop Lighthoue Validation](documentation/images/testing)
+![Favourites Page Desktop Lighthoue Validation](documentation/images/testing/lighthouse_desktop_favourites.PNG)
 
 #### **Mobile**
 
-![Favourites Page Mobile Lighthoue Validation](documentation/images/testing)
+![Favourites Page Mobile Lighthoue Validation](documentation/images/testing/lighthouse_mobile_favourites.PNG)
 
 ### Log In Page
 
 #### **Desktop**
 
-![Log In Page Desktop Lighthoue Validation](documentation/images/testing)
+![Log In Page Desktop Lighthoue Validation](documentation/images/testing/lighthouse_desktop_login.PNG)
 
 #### **Mobile**
 
-![Log In Page Mobile Lighthoue Validation](documentation/images/testing)
+![Log In Page Mobile Lighthoue Validation](documentation/images/testing/lighthouse_mobile_login.PNG)
 
 ### Sign Up Page
 
 #### **Desktop**
 
-![Sign Up Page Desktop Lighthoue Validation](documentation/images/testing)
+![Sign Up Page Desktop Lighthoue Validation](documentation/images/testing/lighthouse_desktop_signup.PNG)
 
 #### **Mobile**
 
-![Sign Up Page Mobile Lighthoue Validation](documentation/images/testing)
+![Sign Up Page Mobile Lighthoue Validation](documentation/images/testing/lighthouse_mobile_signup.PNG)
 
 ### Cocktail Page
 
 #### **Desktop**
 
-![cocktail Page Desktop Lighthoue Validation](documentation/images/testing)
+![cocktail Page Desktop Lighthoue Validation](documentation/images/testing/lighthouse_desktop_cocktail.PNG)
 
 #### **Mobile**
 
-![Cocktail Page Mobile Lighthoue Validation](documentation/images/testing)
+![Cocktail Page Mobile Lighthoue Validation](documentation/images/testing/)
 
 ### My Cocktails Page
 
 #### **Desktop**
 
-![My Cocktails Page Desktop Lighthoue Validation](documentation/images/testing)
+![My Cocktails Page Desktop Lighthoue Validation](documentation/images/testing/lighthouse_desktop_my_cocktails.PNG)
 
 #### **Mobile**
 
-![My Cocktails Page Mobile Lighthoue Validation](documentation/images/testing)
+![My Cocktails Page Mobile Lighthoue Validation](documentation/images/testing/lighthouse_mobile_my_cocktails_user1.PNG)
 
 
 
@@ -171,11 +167,33 @@ All pages were checked on lighthouse with the results between 80% and 100% for e
 
 #### **Desktop**
 
-![Add/Edit Cocktail Page Desktop Lighthoue Validation]()
+![Add/Edit Cocktail Page Desktop Lighthoue Validation](documentation/images/testing/lighthouse_desktop_add.PNG)
 
 #### **Mobile**
 
-![Add/Edit Cocktail Page Mobile Lighthoue Validation](documentation/images/testing)
+![Add/Edit Cocktail Page Mobile Lighthoue Validation](documentation/images/testing/lighthouse_mobile_add.PNG)
+
+### Edit Page
+
+#### **Desktop**
+
+![Edit Cocktail Page Desktop Lighthoue Validation](documentation/images/testing/lighthouse_desktop_edit.PNG)
+
+#### **Mobile**
+
+![Edit Cocktail Page Mobile Lighthoue Validation](documentation/images/testing/lighthouse_mobile_edit.PNG)
+
+
+
+### Delete Page
+
+#### **Desktop**
+
+![Delete Cocktail Page Desktop Lighthoue Validation](documentation/images/testing/lighthouse_desktop_delete.PNG)
+
+#### **Mobile**
+
+![Delete Cocktail Page Mobile Lighthoue Validation](documentation/images/testing/lighthouse_mobile_elete.PNG)
 
 
 ## Manual Testing
