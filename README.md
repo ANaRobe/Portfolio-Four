@@ -76,7 +76,6 @@ Through the use of the Kanban board in the projects view in Github, the project 
 * Done
 
 ![Kanban board github - View](documentation/images/Kanban.PNG)
-![Table View github -View](documentation/images/Kanban.PNG)
 
 *Projects* were used to divide the project into three iterations with a simple Kanban board.
 *Milestones* were used to create Epics with a custom template
@@ -500,7 +499,16 @@ References used:
 * Bootstrap Documentation
 * Summernote GitHub Docs
 
-Projects of other fellow colleagues which inspired this website:
+### Youtube tutorials:
+
+* https://www.youtube.com/watch?v=llbtoQTt4qw&amp;ab_channel=DennisIvy
+* https://www.youtube.com/watch?v=JttTcnidSdQ&ab_channel=TraversyMedia
+* https://www.youtube.com/watch?v=BrQrUmIOKdU
+* https://www.youtube.com/watch?v=EX6Tt-ZW0so
+* https://www.youtube.com/@TechWithTim
+
+
+### Projects of other fellow colleagues which inspired this website:
 
 * https://github.com/Iris-Smok/The-Healthy-Family-PP4
 * https://github.com/sherryrich/heard-it
@@ -509,6 +517,8 @@ Projects of other fellow colleagues which inspired this website:
 * https://github.com/CluelessBiker/project4
 * https://github.com/KarinOldbring/vegan-a-eat
 * https://github.com/Sharpryan20/food-twisters
+* https://github.com/OwenDa/portfolio-4/issues/35
+* https://keto-cookbook.herokuapp.com/get_recipes
 
 -----------------------------------------------------------------------------
 
@@ -522,5 +532,5 @@ Projects of other fellow colleagues which inspired this website:
 
 ### Sources
 
-Code Institute student template for Gitpod, where all of the toolsto get started were preinstalled.
+Code Institute student template for Gitpod, where all of the tools to get started were preinstalled.
 

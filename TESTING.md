@@ -97,7 +97,7 @@ One warning of unused variable cropped up, however this variable is called elsew
 
 ## Lighthouse Testing
 
-All pages were checked on lighthouse with the results between 80% and 100% for each page on mobile and desktop.
+All pages were checked on lighthouse with the results mostly between 80% and 100% for each page on mobile and desktop.
 Accessibility was impacted on a few pages. 
 There were instances when the performance droped under 80% and I have tried to fix the issue by installing a CDN but that solution failed. This issue will remain to be fixed in the future.
 
@@ -422,3 +422,29 @@ In addition to the other tests, I have conducted a manual check list for myself 
 | &check; | That the cocktail listing card shows the cocktail title, like, cocktail image and wether is Mocktail or Cocktail
 | &check; | That the cocktail heart shows the number of likes of the specific cocktail
 | &check; | That the number of likes of a cocktail  is reflected accurately according to how the user changes their like
+
+| Status | **Admin  Page - Admin User Logged In**
+|:-------:|:--------|
+| &check; | That the Admin  Page is accessible by typing in the url /admin
+| &check; | Clicking the Cocktails tab it will open the list of cocktails and the admin will be able to edit each one of them
+| &check; | Clicking the Add button to Cocktails section, the admin is able to create new recipe of a cocktail.
+| &check; | Choosing the Delete option will remove all selected cocktails from the database and from the website entirely.
+| &check; | Clicking the Remarks tab it will open the list of remarks and the admin will be able to edit each one of them
+| &check; | Clicking the the Add button to Remarks section, the admin is able to add a new remark to a specific selected cocktail.
+| &check; | Choosing the Delete option will remove all selected remarks from the database and from the website entirely.
+| &check; | Clicking the Users tab it will open the list of user and the admin will be able to edit each one of their profile
+| &check; | Clicking the the Add button to Remarks section, the admin is able to create a new user profile.
+| &check; | Choosing the Delete option will remove all selected users from the database and from the website entirely.
+
+
+## Bugs
+### Unresolved Bugs
+
+
+Accessibility was impacted on a few pages due to the size of the pictures. 
+There were instances when the performance droped under 80% and I have tried to fix the issue by changing the Paralax images format from jpg to webp. 
+The loading time will be up to 7 second still because of the photos uploaded by the users. 
+The installation of an image  CDN would  have solved the issue. 
+I have been trying to install the Thumbor image CDN with no success though. 
+This issue will remain to be fixed in the future.
+

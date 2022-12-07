@@ -8,7 +8,6 @@ from django.urls import reverse
 from django.utils.text import slugify
 
 
-
 class Cocktail(models.Model):
     """Cocktail recipe blueprint"""
     title = models.CharField(max_length=50, null=False, blank=False, unique=True)
