@@ -491,7 +491,7 @@ Most recipes created on this site were taken from [Barschool](https://www.barsch
 ### Media
 Most images that were used on the site were taken from [Pexels](https://www.pexels.com/royalty-free-images/) and [Unsplash](https://unsplash.com/s/photos/cocktails)
 
-### Code
+### Code*
 References used:
 
 * Stack Overflow
@@ -530,7 +530,13 @@ References used:
 
 * Kasia Bogucka
 
+
 ### Sources
 
 Code Institute student template for Gitpod, where all of the tools to get started were preinstalled.
+
+<br>
+
+*Note that this is the very first full stack project I ever worked on. Therefore, every line of code written was guided by the Code Institute content, YouTube tutorials and other fellow colleagues websites mentioned above. The code is supposed not to be an original one, rather functional. 
+Many thanks to my mentor, my cohort facilitator, CI turors and fellow colleagues who inspired this project!
 
